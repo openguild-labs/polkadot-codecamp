@@ -1,6 +1,6 @@
-# Polkadot Hackathon CodeCamp Website
+# Polkadot Hub CodeCamp Website
 
-A modern, fully responsive website for the Polkadot Hackathon CodeCamp featuring workshop materials, coding challenges, and comprehensive educational resources.
+A modern, fully responsive website for the Polkadot Hub CodeCamp featuring workshop materials, coding challenges, and comprehensive educational resources.
 
 ![Polkadot CodeCamp](https://via.placeholder.com/1200x600/0D0D0D/E6007A?text=Polkadot+CodeCamp)
 
@@ -104,30 +104,35 @@ polkadot-codecamp/
 The website features 5 comprehensive workshops:
 
 ### 1. Introduction to Polkadot Hub
+
 - Understanding the Polkadot ecosystem
 - Developer resources and guidance
 - Hackathon process walkthrough
 - **Presenter:** Tin
 
 ### 2. Build on Polkadot: Narratives, Resources and Growth
+
 - Current Polkadot narratives
 - Leveraging community resources
 - Growth strategies for projects
 - **Presenter:** Tin
 
 ### 3. EVM on Polkadot, Toolings and Development Setup
+
 - Dual VM architecture
 - Development environment setup
 - Foundry, Hardhat, and Scaffold DOT
 - **Presenter:** Tin
 
 ### 4. Cross-chain DeFi Primitives
+
 - XCM (Cross-Consensus Messaging)
 - Hyperbridge SDK integration
 - Building cross-chain applications
 - **Presenter:** Tin (with Bifrost Team)
 
 ### 5. Walk through Polkadot Grant Ecosystem
+
 - Understanding grant programs
 - Writing winning proposals
 - Application process and tips
@@ -136,24 +141,28 @@ The website features 5 comprehensive workshops:
 ## 💻 Coding Challenges
 
 ### 1. Cross-chain Solidity Smart Contract with XCM + Hyperbridge
+
 **Difficulty:** Advanced  
 **PIC:** Dustin
 
 Build cross-chain smart contracts using XCM and Hyperbridge. Deploy on Polkadot testnet.
 
 ### 2. Building a Polkadot AI app with Polkadot Agent Kit
+
 **Difficulty:** Intermediate  
 **PIC:** Dustin
 
 Create AI-powered applications using the polkadot-agent-kit. Deploy a functional agent.
 
 ### 3. Full-stack development with Scaffold DOT
+
 **Difficulty:** Beginner  
 **PIC:** Scaffold-DOT Team
 
 Build a complete full-stack Polkadot application using Scaffold-DOT framework.
 
 ### 4. Building a Uniswap V2 DEX on Polkadot Hub
+
 **Difficulty:** Advanced  
 **PIC:** Dustin
 
@@ -460,7 +469,6 @@ We'd love to hear from you! Please share:
 
 **Built with ❤️ for the Polkadot Community**
 
-*Empowering developers to build the decentralized future*
+_Empowering developers to build the decentralized future_
 
 [Get Started](#-quick-start) | [View Workshops](#-workshops) | [Take Challenges](#-coding-challenges)
-

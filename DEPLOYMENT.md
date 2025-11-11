@@ -1,6 +1,6 @@
 # Deployment Guide
 
-This document provides instructions for deploying the Polkadot Hackathon CodeCamp website.
+This document provides instructions for deploying the Polkadot Hub CodeCamp website.
 
 ## ✅ Prerequisites
 
@@ -40,6 +40,7 @@ git push -u origin main
 3. **Done!** Your site will be live at `https://your-project.vercel.app`
 
 **Custom Domain (Optional):**
+
 - Go to Project Settings → Domains
 - Add your custom domain
 - Follow DNS configuration instructions
@@ -69,6 +70,7 @@ git push -u origin main
 ### Option 3: Self-Hosted (VPS/Server)
 
 **Requirements:**
+
 - Ubuntu 20.04+ or similar
 - Node.js 18+
 - PM2 for process management
@@ -142,6 +144,7 @@ NEXT_PUBLIC_API_URL=https://api.example.com
 ```
 
 **For production deployment, add these in your platform:**
+
 - Vercel: Project Settings → Environment Variables
 - Netlify: Site Settings → Environment Variables
 - Self-hosted: Add to `.env.local` on server
@@ -230,7 +233,7 @@ Add to `app/layout.tsx`:
 
 ```typescript
 // Google Analytics (example)
-import Script from 'next/script';
+import Script from "next/script";
 
 export default function RootLayout({ children }) {
   return (
@@ -262,12 +265,14 @@ export default function RootLayout({ children }) {
 ### Build Fails
 
 **Issue:** Build fails with memory errors
+
 ```bash
 # Solution: Increase Node memory
 NODE_OPTIONS="--max-old-space-size=4096" npm run build
 ```
 
 **Issue:** Missing dependencies
+
 ```bash
 # Solution: Clean install
 rm -rf node_modules package-lock.json
@@ -277,11 +282,13 @@ npm install
 ### Runtime Errors
 
 **Issue:** 404 on workshop pages
+
 - Check `slides/` folder exists
 - Verify markdown files are present
 - Check workshop slugs match filenames
 
 **Issue:** Animations not working
+
 - Ensure Framer Motion is installed
 - Check browser compatibility
 - Verify "use client" directives
@@ -299,19 +306,19 @@ const nextConfig = {
   async headers() {
     return [
       {
-        source: '/:path*',
+        source: "/:path*",
         headers: [
           {
-            key: 'X-Frame-Options',
-            value: 'DENY',
+            key: "X-Frame-Options",
+            value: "DENY",
           },
           {
-            key: 'X-Content-Type-Options',
-            value: 'nosniff',
+            key: "X-Content-Type-Options",
+            value: "nosniff",
           },
           {
-            key: 'Referrer-Policy',
-            value: 'origin-when-cross-origin',
+            key: "Referrer-Policy",
+            value: "origin-when-cross-origin",
           },
         ],
       },
@@ -330,9 +337,11 @@ Replace placeholder images in slides with optimized versions:
 
 ```markdown
 <!-- Before -->
+
 ![Alt](https://via.placeholder.com/800x400)
 
 <!-- After -->
+
 ![Alt](/images/optimized-image.webp)
 ```
 
@@ -349,11 +358,11 @@ const nextConfig = {
   async headers() {
     return [
       {
-        source: '/slides/:path*',
+        source: "/slides/:path*",
         headers: [
           {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
           },
         ],
       },
@@ -402,4 +411,3 @@ Before going live:
 Choose your deployment method above and follow the steps. The website is production-ready and optimized for performance.
 
 For questions or issues, refer to the main [README.md](README.md) or reach out to the development team.
-

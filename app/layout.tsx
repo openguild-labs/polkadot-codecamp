@@ -9,12 +9,12 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Polkadot Hackathon CodeCamp",
+  title: "Polkadot Hub CodeCamp",
   description:
     "Learn to build on Polkadot through workshops and coding challenges",
   keywords: ["Polkadot", "Hackathon", "CodeCamp", "Blockchain", "Web3"],
   openGraph: {
-    title: "Polkadot Hackathon CodeCamp",
+    title: "Polkadot Hub CodeCamp",
     description:
       "Learn to build on Polkadot through workshops and coding challenges",
     type: "website",
