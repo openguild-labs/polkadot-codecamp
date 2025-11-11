@@ -1,0 +1,34 @@
+import type { Metadata } from "next";
+import { Montserrat } from "next/font/google";
+import "./globals.css";
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  variable: "--font-montserrat",
+  weight: ["300", "400", "500", "600", "700", "800"],
+});
+
+export const metadata: Metadata = {
+  title: "Polkadot Hackathon CodeCamp",
+  description:
+    "Learn to build on Polkadot through workshops and coding challenges",
+  keywords: ["Polkadot", "Hackathon", "CodeCamp", "Blockchain", "Web3"],
+  openGraph: {
+    title: "Polkadot Hackathon CodeCamp",
+    description:
+      "Learn to build on Polkadot through workshops and coding challenges",
+    type: "website",
+  },
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en" className={montserrat.variable}>
+      <body className="font-sans antialiased">{children}</body>
+    </html>
+  );
+}
