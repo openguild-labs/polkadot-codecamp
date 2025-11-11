@@ -55,9 +55,9 @@ export const Hero: React.FC = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-5xl md:text-7xl font-bold mb-6"
+          className="text-6xl md:text-8xl font-bold mb-6"
         >
-          <span className="text-polkadot-pink">Polkadot Hackathon</span>
+          <span className="text-polkadot-pink">Polkadot Hub</span>
           <br />
           <span className="text-white">CodeCamp</span>
         </motion.h1>
@@ -68,8 +68,8 @@ export const Hero: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto"
         >
-          Master Polkadot development through hands-on workshops and coding challenges.
-          Build the future of decentralized applications.
+          Master Polkadot Hub development through hands-on workshops and coding
+          challenges. Build the future of decentralized applications.
         </motion.p>
 
         <motion.div
@@ -111,4 +111,3 @@ export const Hero: React.FC = () => {
     </Section>
   );
 };
-
