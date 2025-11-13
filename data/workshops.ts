@@ -18,7 +18,7 @@ export const workshops: Workshop[] = [
     pic: "Tin",
     deliverables: "Understanding of Polkadot ecosystem and hackathon process",
     slug: "introduction-to-polkadot-hub",
-    videoUrl: "https://www.youtube.com/embed/9mqerlQXgMk?si=gkycaA8hhSI5aO8U",
+    videoUrl: "https://www.youtube.com/embed/PqzUtLp2Oxc?si=3rE7C_R2cKQbCM0L",
     slidePath: "/slides/introduction-to-polkadot-hub.md",
   },
   {
@@ -29,7 +29,7 @@ export const workshops: Workshop[] = [
     pic: "Tin",
     deliverables: "Knowledge of Polkadot narratives and community resources",
     slug: "build-on-polkadot-narratives",
-    videoUrl: "https://www.youtube.com/embed/9mqerlQXgMk?si=gkycaA8hhSI5aO8U",
+    videoUrl: "https://www.youtube.com/embed/GRdQDiOwc-8?si=ceiRbZ2ugJqKuVoP",
     slidePath: "/slides/build-on-polkadot-narratives.md",
   },
   {
@@ -40,7 +40,7 @@ export const workshops: Workshop[] = [
     pic: "Tin",
     deliverables: "Configured development environment with EVM tooling",
     slug: "evm-tooling-development-setup",
-    videoUrl: "https://www.youtube.com/embed/9mqerlQXgMk?si=gkycaA8hhSI5aO8U",
+    videoUrl: "https://www.youtube.com/embed/HMCZUCmoWvU?si=PRpD890d6mx0XjWE",
     slidePath: "/slides/evm-tooling-development-setup.md",
   },
   {
@@ -51,7 +51,7 @@ export const workshops: Workshop[] = [
     pic: "Tin",
     deliverables: "Understanding of XCM and cross-chain DeFi implementations",
     slug: "cross-chain-defi-primitives",
-    videoUrl: "https://www.youtube.com/embed/9mqerlQXgMk?si=gkycaA8hhSI5aO8U",
+    videoUrl: "https://www.youtube.com/embed/WM0NCiC5GRM?si=UhSB6KMDnvdbx4CB",
     slidePath: "/slides/cross-chain-defi-primitives.md",
   },
   {
@@ -62,7 +62,7 @@ export const workshops: Workshop[] = [
     pic: "Tin",
     deliverables: "Knowledge of grant writing and proposal best practices",
     slug: "polkadot-grant-ecosystem",
-    videoUrl: "https://www.youtube.com/embed/9mqerlQXgMk?si=gkycaA8hhSI5aO8U",
+    videoUrl: "https://www.youtube.com/embed/lSN72TE6uw0?si=_hoBdDY30RPpVjyX",
     slidePath: "/slides/polkadot-grant-ecosystem.md",
   },
 ];

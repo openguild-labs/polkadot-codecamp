@@ -14,7 +14,7 @@ Welcome to the future of blockchain development on Polkadot
 
 ## 📺 Workshop Recording
 
-<iframe width="100%" height="600px" src="https://www.youtube.com/embed/9mqerlQXgMk?si=gkycaA8hhSI5aO8U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="100%" height="600px" src="https://www.youtube.com/embed/PqzUtLp2Oxc?si=3rE7C_R2cKQbCM0L" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ---
 

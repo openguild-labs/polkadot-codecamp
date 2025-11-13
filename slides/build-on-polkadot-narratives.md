@@ -16,7 +16,7 @@ duration: 60 minutes
 
 ## 📺 Workshop Recording
 
-<iframe width="100%" height="600px" src="https://www.youtube.com/embed/9mqerlQXgMk?si=gkycaA8hhSI5aO8U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="100%" height="600px" src="https://www.youtube.com/embed/GRdQDiOwc-8?si=ceiRbZ2ugJqKuVoP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ---
 
