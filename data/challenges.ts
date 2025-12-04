@@ -18,7 +18,7 @@ export const challenges: Challenge[] = [
     deliverables:
       "Deploy a cross-chain smart contract using XCM and Hyperbridge on Polkadot testnet",
     githubUrl:
-      "https://github.com/CocDap/codecamp-challenges/tree/main/1-xcm-hyperbridge",
+      "https://github.com/openguild-labs/polkadot-codecamp-challenges/tree/main/1-xcm-hyperbridge",
     difficulty: "Advanced",
   },
   {
@@ -30,7 +30,7 @@ export const challenges: Challenge[] = [
     deliverables:
       "Coding challenge repo with tests + template setup. Builders need to deploy a new agent built using the agent kit",
     githubUrl:
-      "https://github.com/CocDap/codecamp-challenges/tree/main/2-polkadot-agent-kit",
+      "https://github.com/openguild-labs/polkadot-codecamp-challenges/tree/main/2-polkadot-agent-kit",
     difficulty: "Intermediate",
   },
   {
@@ -42,7 +42,7 @@ export const challenges: Challenge[] = [
     deliverables:
       "Functional application built on top of Scaffold DOT - add new features on top of the boilerplate and deploy",
     githubUrl:
-      "https://github.com/CocDap/codecamp-challenges/tree/main/3-fullstack-scaffold-dot",
+      "https://github.com/openguild-labs/polkadot-codecamp-challenges/tree/main/3-fullstack-scaffold-dot",
     difficulty: "Beginner",
   },
   {
@@ -54,7 +54,7 @@ export const challenges: Challenge[] = [
     deliverables:
       "Coding challenge repo with tests + template setup. Builders need to complete the Uniswap V2 contract and deploy on testnet with UI (can reuse the Scaffold-DOT)",
     githubUrl:
-      "https://github.com/CocDap/codecamp-challenges/tree/main/4-uniswapv2",
+      "https://github.com/openguild-labs/polkadot-codecamp-challenges/tree/main/4-uniswapv2",
     difficulty: "Advanced",
   },
 ];
