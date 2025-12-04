@@ -6,7 +6,7 @@ import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
 import { ChevronLeft, ChevronRight, Maximize2, Minimize2 } from "lucide-react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { oneLight } from "react-syntax-highlighter/dist/esm/styles/prism";
 import mermaid from "mermaid";
 
 interface SlideViewerProps {
@@ -26,18 +26,17 @@ const MermaidDiagram: React.FC<{ chart: string; isFullscreen: boolean }> = ({
     if (!isInitialized) {
       mermaid.initialize({
         startOnLoad: false,
-        theme: "dark",
+        theme: "default",
         themeVariables: {
-          primaryColor: "#E6007A",
-          primaryTextColor: "#fff",
-          primaryBorderColor: "#E6007A",
-          lineColor: "#E6007A",
-          secondaryColor: "#552BBF",
-          tertiaryColor: "#1a1a1a",
-          background: "#1a1a1a",
-          mainBkg: "#262626",
-          secondBkg: "#1a1a1a",
-          darkMode: true,
+          primaryColor: "#5816CF",
+          primaryTextColor: "#000",
+          primaryBorderColor: "#5816CF",
+          lineColor: "#FF195F",
+          secondaryColor: "#EDF4FE",
+          tertiaryColor: "#ffffff",
+          background: "#ffffff",
+          mainBkg: "#EDF4FE",
+          secondBkg: "#ffffff",
         },
       });
       setIsInitialized(true);
@@ -60,7 +59,7 @@ const MermaidDiagram: React.FC<{ chart: string; isFullscreen: boolean }> = ({
         .catch((error) => {
           console.error("Mermaid rendering error:", error);
           if (mermaidRef.current) {
-            mermaidRef.current.innerHTML = `<pre class="text-red-500">Error rendering diagram: ${error.message}</pre>`;
+            mermaidRef.current.innerHTML = `<pre class="text-crimson">Error rendering diagram: ${error.message}</pre>`;
           }
         });
     }
@@ -69,12 +68,12 @@ const MermaidDiagram: React.FC<{ chart: string; isFullscreen: boolean }> = ({
   return (
     <div
       ref={mermaidRef}
-      className={`mermaid-diagram my-6 p-4 bg-polkadot-gray-800 rounded-lg border border-polkadot-gray-700 overflow-x-auto ${
+      className={`mermaid-diagram my-6 p-4 bg-water border-2 border-black shadow-[4px_4px_0_#000000] overflow-x-auto ${
         isFullscreen ? "text-base" : "text-sm"
       }`}
     >
       {!isInitialized && (
-        <div className="text-gray-400">Loading diagram...</div>
+        <div className="text-black/60">Loading diagram...</div>
       )}
     </div>
   );
@@ -162,17 +161,17 @@ export const SlideViewer: React.FC<SlideViewerProps> = ({ content }) => {
   }, []);
 
   if (slides.length === 0) {
-    return <div className="text-gray-400">Loading slides...</div>;
+    return <div className="text-black/60">Loading slides...</div>;
   }
 
   return (
     <div
       ref={containerRef}
-      className={`relative ${isFullscreen ? "bg-polkadot-darker" : ""}`}
+      className={`relative ${isFullscreen ? "bg-white" : ""}`}
     >
       {/* Slide Container */}
       <div
-        className={`bg-polkadot-gray-900 rounded-lg border border-polkadot-gray-700 overflow-hidden ${
+        className={`bg-white border-2 border-black shadow-[4px_4px_0_#000000] overflow-hidden ${
           isFullscreen ? "h-screen flex flex-col" : ""
         }`}
       >
@@ -181,10 +180,14 @@ export const SlideViewer: React.FC<SlideViewerProps> = ({ content }) => {
           className={`p-8 md:p-12 flex items-start justify-center overflow-y-auto ${
             isFullscreen ? "flex-1 h-full pt-12" : "h-[500px] md:h-[600px] pt-8"
           }`}
+          style={{
+            backgroundImage: "radial-gradient(circle, #E2E2E2 1px, transparent 1px)",
+            backgroundSize: "20px 20px",
+          }}
         >
           <div className={`w-full ${isFullscreen ? "max-w-6xl" : "max-w-4xl"}`}>
             <div
-              className={`prose prose-invert prose-pink max-w-none ${
+              className={`prose max-w-none ${
                 isFullscreen ? "py-8" : "py-4"
               }`}
             >
@@ -194,7 +197,7 @@ export const SlideViewer: React.FC<SlideViewerProps> = ({ content }) => {
                 components={{
                   h1: ({ children }) => (
                     <h1
-                      className={`font-bold mb-8 mt-2 text-polkadot-pink ${
+                      className={`font-title uppercase mb-8 mt-2 text-blueviolet ${
                         isFullscreen
                           ? "text-5xl md:text-7xl"
                           : "text-3xl md:text-5xl"
@@ -205,7 +208,7 @@ export const SlideViewer: React.FC<SlideViewerProps> = ({ content }) => {
                   ),
                   h2: ({ children }) => (
                     <h2
-                      className={`font-bold mt-10 mb-6 text-polkadot-pink ${
+                      className={`font-title uppercase mt-10 mb-6 text-blueviolet ${
                         isFullscreen
                           ? "text-4xl md:text-6xl"
                           : "text-2xl md:text-4xl"
@@ -216,7 +219,7 @@ export const SlideViewer: React.FC<SlideViewerProps> = ({ content }) => {
                   ),
                   h3: ({ children }) => (
                     <h3
-                      className={`font-semibold mt-8 mb-4 text-white ${
+                      className={`font-title uppercase mt-8 mb-4 text-crimson ${
                         isFullscreen
                           ? "text-3xl md:text-5xl"
                           : "text-xl md:text-3xl"
@@ -227,7 +230,7 @@ export const SlideViewer: React.FC<SlideViewerProps> = ({ content }) => {
                   ),
                   p: ({ children }) => (
                     <p
-                      className={`text-gray-300 mb-6 leading-relaxed ${
+                      className={`font-body text-black/80 mb-6 leading-relaxed ${
                         isFullscreen
                           ? "text-xl md:text-2xl"
                           : "text-base md:text-lg"
@@ -238,7 +241,7 @@ export const SlideViewer: React.FC<SlideViewerProps> = ({ content }) => {
                   ),
                   ul: ({ children }) => (
                     <ul
-                      className={`list-disc list-inside space-y-3 mb-6 text-gray-300 ${
+                      className={`font-body list-disc list-inside space-y-3 mb-6 text-black/80 ${
                         isFullscreen
                           ? "text-xl md:text-2xl"
                           : "text-base md:text-lg"
@@ -249,7 +252,7 @@ export const SlideViewer: React.FC<SlideViewerProps> = ({ content }) => {
                   ),
                   ol: ({ children }) => (
                     <ol
-                      className={`list-decimal list-inside space-y-3 mb-6 text-gray-300 ${
+                      className={`font-body list-decimal list-inside space-y-3 mb-6 text-black/80 ${
                         isFullscreen
                           ? "text-xl md:text-2xl"
                           : "text-base md:text-lg"
@@ -264,7 +267,7 @@ export const SlideViewer: React.FC<SlideViewerProps> = ({ content }) => {
                       href={href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-polkadot-pink hover:text-polkadot-purple transition-colors underline"
+                      className="text-crimson hover:text-blueviolet transition-colors underline"
                     >
                       {children}
                     </a>
@@ -293,16 +296,17 @@ export const SlideViewer: React.FC<SlideViewerProps> = ({ content }) => {
                     if (!inline && language) {
                       return (
                         <SyntaxHighlighter
-                          style={vscDarkPlus}
+                          style={oneLight}
                           language={language}
                           PreTag="div"
-                          className={`rounded-lg mb-6 border border-polkadot-gray-700 ${
+                          className={`border-2 border-black shadow-[4px_4px_0_#000000] mb-6 ${
                             isFullscreen ? "text-base md:text-lg" : "text-sm"
                           }`}
                           customStyle={{
                             margin: 0,
                             padding: isFullscreen ? "1.5rem" : "1rem",
-                            background: "#1a1a1a",
+                            background: "#EDF4FE",
+                            borderRadius: 0,
                           }}
                           {...props}
                         >
@@ -315,13 +319,13 @@ export const SlideViewer: React.FC<SlideViewerProps> = ({ content }) => {
                     if (!inline) {
                       return (
                         <pre
-                          className={`bg-polkadot-gray-800 p-6 rounded-lg overflow-x-auto mb-6 border border-polkadot-gray-700 font-mono ${
+                          className={`bg-water p-6 overflow-x-auto mb-6 border-2 border-black shadow-[4px_4px_0_#000000] font-mono ${
                             isFullscreen
                               ? "text-base md:text-xl"
                               : "text-sm md:text-base"
                           }`}
                         >
-                          <code className="text-polkadot-pink">{children}</code>
+                          <code className="text-blueviolet">{children}</code>
                         </pre>
                       );
                     }
@@ -329,7 +333,7 @@ export const SlideViewer: React.FC<SlideViewerProps> = ({ content }) => {
                     // Inline code
                     return (
                       <code
-                        className={`bg-polkadot-gray-800 text-polkadot-pink px-2 py-1 rounded font-mono ${
+                        className={`bg-water text-crimson px-2 py-1 font-mono border border-platinum ${
                           isFullscreen ? "text-base md:text-lg" : "text-sm"
                         }`}
                         {...props}
@@ -339,31 +343,31 @@ export const SlideViewer: React.FC<SlideViewerProps> = ({ content }) => {
                     );
                   },
                   blockquote: ({ children }) => (
-                    <blockquote className="border-l-4 border-polkadot-pink pl-4 italic text-gray-400 my-4">
+                    <blockquote className="font-body border-l-4 border-crimson pl-4 italic text-black/60 my-4">
                       {children}
                     </blockquote>
                   ),
                   table: ({ children }) => (
                     <div className="overflow-x-auto my-8">
-                      <table className="min-w-full border-collapse border-2 border-polkadot-pink">
+                      <table className="min-w-full border-collapse border-2 border-black shadow-[4px_4px_0_#000000]">
                         {children}
                       </table>
                     </div>
                   ),
                   thead: ({ children }) => (
-                    <thead className="bg-polkadot-pink">{children}</thead>
+                    <thead className="bg-blueviolet text-white">{children}</thead>
                   ),
                   tbody: ({ children }) => (
-                    <tbody className="bg-polkadot-gray-900">{children}</tbody>
+                    <tbody className="bg-white">{children}</tbody>
                   ),
                   tr: ({ children }) => (
-                    <tr className="border-b border-polkadot-gray-700 hover:bg-polkadot-gray-800 transition-colors">
+                    <tr className="border-b-2 border-black hover:bg-water transition-colors">
                       {children}
                     </tr>
                   ),
                   th: ({ children }) => (
                     <th
-                      className={`border border-polkadot-pink px-6 py-4 text-left font-bold text-white ${
+                      className={`border-2 border-black px-6 py-4 text-left font-title uppercase text-white ${
                         isFullscreen
                           ? "text-xl md:text-2xl"
                           : "text-base md:text-lg"
@@ -374,7 +378,7 @@ export const SlideViewer: React.FC<SlideViewerProps> = ({ content }) => {
                   ),
                   td: ({ children }) => (
                     <td
-                      className={`border border-polkadot-gray-700 px-6 py-4 text-gray-300 ${
+                      className={`font-body border-2 border-black px-6 py-4 text-black/80 ${
                         isFullscreen
                           ? "text-lg md:text-xl"
                           : "text-sm md:text-base"
@@ -389,10 +393,10 @@ export const SlideViewer: React.FC<SlideViewerProps> = ({ content }) => {
                       <img
                         src={src}
                         alt={alt || ""}
-                        className="rounded-lg w-full border border-polkadot-gray-700"
+                        className="w-full border-2 border-black shadow-[4px_4px_0_#000000]"
                       />
                       {alt && (
-                        <p className="text-center text-sm text-gray-500 mt-2">
+                        <p className="text-center text-sm text-black/50 mt-2 font-title uppercase tracking-wide">
                           {alt}
                         </p>
                       )}
@@ -409,7 +413,7 @@ export const SlideViewer: React.FC<SlideViewerProps> = ({ content }) => {
 
         {/* Navigation Controls */}
         <div
-          className={`bg-polkadot-gray-800 border-t border-polkadot-gray-700 px-6 flex items-center justify-between ${
+          className={`bg-black px-6 flex items-center justify-between ${
             isFullscreen ? "py-6" : "py-4"
           }`}
         >
@@ -417,8 +421,8 @@ export const SlideViewer: React.FC<SlideViewerProps> = ({ content }) => {
           <button
             onClick={prevSlide}
             disabled={currentSlide === 0}
-            className={`flex items-center gap-2 px-4 bg-polkadot-gray-700 hover:bg-polkadot-pink disabled:opacity-30 disabled:cursor-not-allowed rounded-lg transition-colors ${
-              isFullscreen ? "py-3 text-lg" : "py-2"
+            className={`flex items-center gap-2 px-4 bg-blueviolet text-white hover:bg-crimson disabled:opacity-30 disabled:cursor-not-allowed transition-colors font-title uppercase tracking-wider ${
+              isFullscreen ? "py-3 text-lg" : "py-2 text-sm"
             }`}
           >
             <ChevronLeft className={isFullscreen ? "w-6 h-6" : "w-5 h-5"} />
@@ -428,11 +432,11 @@ export const SlideViewer: React.FC<SlideViewerProps> = ({ content }) => {
           {/* Center: Slide Counter */}
           <div className="flex items-center gap-4">
             <span
-              className={`text-gray-400 ${
+              className={`text-white/60 font-title tracking-wider ${
                 isFullscreen ? "text-lg md:text-xl" : "text-sm"
               }`}
             >
-              Slide {currentSlide + 1} of {slides.length}
+              {String(currentSlide + 1).padStart(2, "0")} / {String(slides.length).padStart(2, "0")}
             </span>
 
             {/* Slide Dots (for mobile) */}
@@ -441,16 +445,16 @@ export const SlideViewer: React.FC<SlideViewerProps> = ({ content }) => {
                 <button
                   key={index}
                   onClick={() => setCurrentSlide(index)}
-                  className={`w-2 h-2 rounded-full transition-colors ${
+                  className={`w-2 h-2 transition-colors ${
                     index === currentSlide
-                      ? "bg-polkadot-pink"
-                      : "bg-polkadot-gray-600 hover:bg-polkadot-gray-500"
+                      ? "bg-crimson"
+                      : "bg-white/30 hover:bg-white/50"
                   }`}
                   aria-label={`Go to slide ${index + 1}`}
                 />
               ))}
               {slides.length > 10 && (
-                <span className="text-gray-500 text-xs ml-1">
+                <span className="text-white/50 text-xs ml-1">
                   +{slides.length - 10}
                 </span>
               )}
@@ -461,7 +465,7 @@ export const SlideViewer: React.FC<SlideViewerProps> = ({ content }) => {
           <div className="flex items-center gap-2">
             <button
               onClick={toggleFullscreen}
-              className={`bg-polkadot-gray-700 hover:bg-polkadot-purple rounded-lg transition-colors ${
+              className={`bg-white/10 hover:bg-blueviolet text-white transition-colors ${
                 isFullscreen ? "p-3" : "p-2"
               }`}
               aria-label="Toggle fullscreen"
@@ -476,8 +480,8 @@ export const SlideViewer: React.FC<SlideViewerProps> = ({ content }) => {
             <button
               onClick={nextSlide}
               disabled={currentSlide === slides.length - 1}
-              className={`flex items-center gap-2 px-4 bg-polkadot-pink hover:bg-polkadot-purple disabled:opacity-30 disabled:cursor-not-allowed rounded-lg transition-colors ${
-                isFullscreen ? "py-3 text-lg" : "py-2"
+              className={`flex items-center gap-2 px-4 bg-crimson text-white hover:bg-blueviolet disabled:opacity-30 disabled:cursor-not-allowed transition-colors font-title uppercase tracking-wider ${
+                isFullscreen ? "py-3 text-lg" : "py-2 text-sm"
               }`}
             >
               <span className="hidden md:inline">Next</span>
@@ -489,13 +493,13 @@ export const SlideViewer: React.FC<SlideViewerProps> = ({ content }) => {
 
       {/* Keyboard Shortcuts Help */}
       {!isFullscreen && (
-        <div className="mt-4 text-center text-sm text-gray-500">
+        <div className="mt-4 text-center text-sm text-black/50">
           <p>
-            Use <kbd className="px-2 py-1 bg-polkadot-gray-800 rounded">←</kbd>{" "}
-            <kbd className="px-2 py-1 bg-polkadot-gray-800 rounded">→</kbd> or{" "}
-            <kbd className="px-2 py-1 bg-polkadot-gray-800 rounded">Space</kbd>{" "}
+            Use <kbd className="px-2 py-1 bg-water border border-platinum font-title text-xs">←</kbd>{" "}
+            <kbd className="px-2 py-1 bg-water border border-platinum font-title text-xs">→</kbd> or{" "}
+            <kbd className="px-2 py-1 bg-water border border-platinum font-title text-xs">Space</kbd>{" "}
             to navigate • Press{" "}
-            <kbd className="px-2 py-1 bg-polkadot-gray-800 rounded">F</kbd> for
+            <kbd className="px-2 py-1 bg-water border border-platinum font-title text-xs">F</kbd> for
             fullscreen
           </p>
         </div>

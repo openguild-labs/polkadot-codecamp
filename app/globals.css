@@ -2,23 +2,172 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Custom Fonts */
+@font-face {
+  font-family: "VCR OSD Mono";
+  src: url("/fonts/VCR_OSD_MONO_1.001.TTF") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("/fonts/SPACEGROTESK-LIGHT.TTF") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("/fonts/SPACEGROTESK-REGULAR.TTF") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("/fonts/SPACEGROTESK-MEDIUM.TTF") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("/fonts/SPACEGROTESK-SEMIBOLD.TTF") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("/fonts/SPACEGROTESK-BOLD.TTF") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Minecraftia";
+  src: url("/fonts/MINECRAFTIA-REGULAR.TTF") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @layer base {
   :root {
+    /* Brand Colors */
+    --crimson: #ff195f;
+    --blueviolet: #5816cf;
+    --water: #edf4fe;
+    --platinum: #e2e2e2;
+    --black: #000000;
+    --white: #ffffff;
+
     --background: 0 0% 100%;
     --foreground: 0 0% 3.9%;
   }
 
   body {
-    @apply bg-polkadot-darker text-white;
+    @apply bg-white text-black;
+    font-family: "Space Grotesk", system-ui, sans-serif;
   }
 
   * {
-    @apply border-polkadot-gray-700;
+    border-color: #e2e2e2;
+  }
+}
+
+@layer components {
+  /* VCR OSD Mono title style - for headers only */
+  .font-title {
+    font-family: "VCR OSD Mono", monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+
+  /* Space Grotesk body text - for regular content */
+  .font-body {
+    font-family: "Space Grotesk", system-ui, sans-serif;
+  }
+
+  /* Minecraftia pixel decorative text */
+  .font-pixel {
+    font-family: "Minecraftia", monospace;
+    text-transform: uppercase;
+  }
+
+  /* Card with pixel border */
+  .card-pixel {
+    @apply bg-white border-2 border-black p-6;
+    box-shadow: 4px 4px 0 var(--black);
+    transition: all 0.2s ease;
+  }
+
+  .card-pixel:hover {
+    box-shadow: 6px 6px 0 var(--black);
+    transform: translate(-2px, -2px);
+  }
+
+  /* Section heading style */
+  .section-heading {
+    font-family: "VCR OSD Mono", monospace;
+    @apply text-4xl md:text-5xl lg:text-6xl uppercase;
+    color: var(--blueviolet);
+  }
+
+  .section-subheading {
+    font-family: "VCR OSD Mono", monospace;
+    @apply uppercase text-sm md:text-base tracking-widest mb-2;
+    color: var(--crimson);
+  }
+
+  /* Accent bar */
+  .accent-bar {
+    @apply h-2;
+    background-color: var(--blueviolet);
+    width: 120px;
+  }
+
+  .accent-bar-crimson {
+    @apply h-2;
+    background-color: var(--crimson);
+    width: 120px;
   }
 }
 
 @layer utilities {
-  /* Removed gradient utilities */
+  /* Text gradient */
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(
+      135deg,
+      var(--crimson),
+      var(--blueviolet)
+    );
+  }
+
+  /* Staggered animation delays */
+  .stagger-1 {
+    animation-delay: 0.1s;
+  }
+  .stagger-2 {
+    animation-delay: 0.2s;
+  }
+  .stagger-3 {
+    animation-delay: 0.3s;
+  }
+  .stagger-4 {
+    animation-delay: 0.4s;
+  }
+  .stagger-5 {
+    animation-delay: 0.5s;
+  }
 }
 
 /* Smooth scrolling */
@@ -32,15 +181,40 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: #0D0D0D;
+  background: #edf4fe;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #E6007A;
-  border-radius: 5px;
+  background: #ff195f;
+  border-radius: 0;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #552BBF;
+  background: #5816cf;
 }
 
+/* Keyframe animations */
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Blink animation utility */
+.animate-blink {
+  animation: blink 1s step-end infinite;
+}

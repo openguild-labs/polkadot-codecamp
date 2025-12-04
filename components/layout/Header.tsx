@@ -28,33 +28,42 @@ export const Header: React.FC = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-polkadot-darker/95 backdrop-blur-lg shadow-lg" : "bg-transparent"
+        isScrolled
+          ? "bg-white/95 backdrop-blur-sm shadow-[0_4px_0_#E2E2E2]"
+          : "bg-transparent"
       }`}
     >
       <Container>
         <nav className="flex items-center justify-between py-4">
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="text-2xl font-bold text-polkadot-pink">
-              Polkadot CodeCamp
+          <Link href="/" className="flex items-center space-x-3 group">
+            {/* Pixel Logo */}
+            <div className="flex items-center gap-1">
+              <div className="w-4 h-4 bg-blueviolet" />
+              <div className="w-4 h-4 bg-crimson" />
+              <div className="w-4 h-4 bg-blueviolet" />
             </div>
+            <span className="font-title text-xl text-blueviolet tracking-wider group-hover:text-crimson transition-colors">
+              POLKADOT HUB CODECAMP
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-10">
             {navItems.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
-                className="text-gray-300 hover:text-polkadot-pink transition-colors duration-200"
+                className="font-title text-sm text-black tracking-wider hover:text-crimson transition-colors duration-200 relative group"
               >
-                {item.label}
+                {item.label.toUpperCase()}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-crimson transition-all duration-200 group-hover:w-full" />
               </a>
             ))}
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-white"
+            className="md:hidden text-black p-2 hover:bg-water transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -68,17 +77,20 @@ export const Header: React.FC = () => {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              className="md:hidden pb-4"
+              className="md:hidden bg-white border-t-2 border-black pb-4"
             >
-              {navItems.map((item) => (
-                <a
+              {navItems.map((item, index) => (
+                <motion.a
                   key={item.label}
                   href={item.href}
-                  className="block py-2 text-gray-300 hover:text-polkadot-pink transition-colors duration-200"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.05 }}
+                  className="block py-3 px-4 font-title text-sm text-black tracking-wider hover:text-crimson hover:bg-water transition-all duration-200"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  {item.label}
-                </a>
+                  {item.label.toUpperCase()}
+                </motion.a>
               ))}
             </motion.div>
           )}
@@ -87,4 +99,3 @@ export const Header: React.FC = () => {
     </header>
   );
 };
-

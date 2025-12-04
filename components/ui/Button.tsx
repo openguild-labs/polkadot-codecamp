@@ -24,18 +24,37 @@ export const Button: React.FC<ButtonProps> = ({
   type = "button",
   disabled = false,
 }) => {
-  const baseClasses = "font-semibold rounded-lg transition-all duration-300 inline-flex items-center justify-center";
-  
+  const baseClasses =
+    "font-title uppercase tracking-wider inline-flex items-center justify-center transition-all duration-200 font-semibold";
+
   const variants = {
-    primary: "bg-polkadot-pink text-white hover:shadow-lg hover:shadow-polkadot-pink/50 hover:scale-105",
-    secondary: "bg-polkadot-purple text-white hover:bg-polkadot-pink hover:shadow-lg hover:shadow-polkadot-purple/50",
-    outline: "border-2 border-polkadot-pink text-polkadot-pink hover:bg-polkadot-pink hover:text-white",
+    primary:
+      "text-white hover:brightness-110 active:translate-x-[2px] active:translate-y-[2px]",
+    secondary:
+      "text-white hover:brightness-110 active:translate-x-[2px] active:translate-y-[2px]",
+    outline:
+      "border-2 bg-white hover:text-white",
   };
-  
+
+  const variantStyles = {
+    primary: {
+      backgroundColor: '#5816CF',
+      boxShadow: '4px 4px 0 #000000',
+    },
+    secondary: {
+      backgroundColor: '#FF195F',
+      boxShadow: '4px 4px 0 #000000',
+    },
+    outline: {
+      borderColor: '#5816CF',
+      color: '#5816CF',
+    },
+  };
+
   const sizes = {
-    sm: "px-4 py-2 text-sm",
-    md: "px-6 py-3 text-base",
-    lg: "px-8 py-4 text-lg",
+    sm: "px-4 py-2 text-xs",
+    md: "px-6 py-3 text-sm",
+    lg: "px-8 py-4 text-base",
   };
 
   const buttonClasses = `${baseClasses} ${variants[variant]} ${sizes[size]} ${className}`;
@@ -45,8 +64,18 @@ export const Button: React.FC<ButtonProps> = ({
       <motion.a
         href={href}
         className={buttonClasses}
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
+        style={variantStyles[variant]}
+        whileHover={{ 
+          scale: 1.02,
+          boxShadow: variant !== 'outline' ? '6px 6px 0 #000000' : undefined,
+          backgroundColor: variant === 'outline' ? '#5816CF' : undefined,
+        }}
+        whileTap={{ 
+          scale: 0.98,
+          boxShadow: variant !== 'outline' ? '2px 2px 0 #000000' : undefined,
+        }}
+        target={href.startsWith("http") ? "_blank" : undefined}
+        rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
       >
         {children}
       </motion.a>
@@ -56,8 +85,16 @@ export const Button: React.FC<ButtonProps> = ({
   return (
     <motion.button
       className={buttonClasses}
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
+      style={variantStyles[variant]}
+      whileHover={{ 
+        scale: 1.02,
+        boxShadow: variant !== 'outline' ? '6px 6px 0 #000000' : undefined,
+        backgroundColor: variant === 'outline' ? '#5816CF' : undefined,
+      }}
+      whileTap={{ 
+        scale: 0.98,
+        boxShadow: variant !== 'outline' ? '2px 2px 0 #000000' : undefined,
+      }}
       onClick={onClick}
       type={type}
       disabled={disabled}
@@ -66,4 +103,3 @@ export const Button: React.FC<ButtonProps> = ({
     </motion.button>
   );
 };
-

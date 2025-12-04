@@ -1,113 +1,183 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
-import { Button, Section } from "@/components/ui";
-import { ArrowRight, Sparkles } from "lucide-react";
+import Image from "next/image";
+import { Button } from "@/components/ui";
+import { ArrowRight } from "lucide-react";
 
 export const Hero: React.FC = () => {
   return (
-    <Section className="min-h-screen flex items-center justify-center bg-gradient-to-b from-polkadot-darker via-polkadot-dark to-polkadot-darker relative overflow-hidden">
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <motion.div
-          className="absolute top-20 left-10 w-72 h-72 bg-polkadot-pink/10 rounded-full blur-3xl"
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.3, 0.5, 0.3],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-        <motion.div
-          className="absolute bottom-20 right-10 w-96 h-96 bg-polkadot-purple/10 rounded-full blur-3xl"
-          animate={{
-            scale: [1, 1.3, 1],
-            opacity: [0.3, 0.5, 0.3],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 1,
-          }}
+    <section className="min-h-screen relative overflow-hidden pt-20 pb-16">
+      {/* World Map Background */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[60%] h-[80%]">
+          <Image
+            src="/graphics/World Map.png"
+            alt="Dotted World Map"
+            fill
+            className="object-contain object-right opacity-90"
+            priority
+          />
+        </div>
+      </div>
+
+      {/* Polkadot Dotted Logo - Top Left */}
+      <div className="absolute left-4 top-24 md:left-8 lg:left-16 md:top-28 w-24 h-32 md:w-32 md:h-40">
+        <Image
+          src="/graphics/Dotted Logo.png"
+          alt="Polkadot Logo"
+          fill
+          className="object-contain"
+          priority
         />
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 text-center max-w-5xl mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="inline-flex items-center gap-2 px-4 py-2 bg-polkadot-pink/10 border border-polkadot-pink/30 rounded-full mb-8"
-        >
-          <Sparkles className="w-4 h-4 text-polkadot-pink" />
-          <span className="text-sm text-polkadot-pink font-medium">
-            Join the Polkadot Ecosystem
-          </span>
-        </motion.div>
-
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-6xl md:text-8xl font-bold mb-6"
-        >
-          <span className="text-polkadot-pink">Polkadot Hub</span>
-          <br />
-          <span className="text-white">CodeCamp</span>
-        </motion.h1>
-
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto"
-        >
-          Master Polkadot Hub development through hands-on workshops and coding
-          challenges. Build the future of decentralized applications.
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
-        >
-          <Button variant="primary" size="lg" href="#workshops">
-            Explore Workshops
-            <ArrowRight className="ml-2 w-5 h-5" />
-          </Button>
-          <Button variant="outline" size="lg" href="#challenges">
-            View Challenges
-          </Button>
-        </motion.div>
-
-        {/* Stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8"
-        >
-          <div className="text-center">
-            <div className="text-4xl font-bold text-polkadot-pink mb-2">5</div>
-            <div className="text-gray-400">Expert Workshops</div>
+      {/* Main Content Container */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 md:pt-24 relative z-10">
+        <div className="flex">
+          {/* Side Navigation - Desktop Only */}
+          <div className="hidden lg:block w-48 flex-shrink-0 pt-48">
+            <nav
+              className="font-body space-y-3 text-sm"
+              style={{
+                color: "rgba(0,0,0,0.6)",
+              }}
+            >
+              <a
+                href="https://build.openguild.wtf"
+                className="block hover:text-crimson transition-colors uppercase tracking-wide font-medium"
+              >
+                Find Your Ideas
+              </a>
+              <a
+                href="https://linktr.ee/OpenGuild"
+                className="block hover:text-crimson transition-colors uppercase tracking-wide font-medium"
+              >
+                Find Teammates
+              </a>
+              <a
+                href="https://learn.openguild.wtf"
+                className="block hover:text-crimson transition-colors uppercase tracking-wide font-medium"
+              >
+                Learn Codecamp
+              </a>
+              <a
+                href="https://openguild.wtf"
+                className="block hover:text-crimson transition-colors uppercase tracking-wide font-medium"
+              >
+                About OpenGuild
+              </a>
+            </nav>
           </div>
-          <div className="text-center">
-            <div className="text-4xl font-bold text-polkadot-pink mb-2">4</div>
-            <div className="text-gray-400">Coding Challenges</div>
+
+          {/* Main Content */}
+          <div className="flex-1 lg:pl-8">
+            {/* Badge */}
+            <div className="inline-block mb-6">
+              <span
+                className="text-xs md:text-sm tracking-widest px-4 py-2 text-white uppercase font-medium font-title"
+                style={{ backgroundColor: "#5816CF" }}
+              >
+                Polkadot Hub
+              </span>
+            </div>
+
+            {/* Main Title */}
+            <h1
+              className="font-title text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black leading-[0.9] mb-6 tracking-tight"
+              style={{ color: "#5816CF" }}
+            >
+              CODECAMP
+              <br />
+              2026
+            </h1>
+
+            {/* Tagline with blinking cursor */}
+            <div className="flex items-center gap-2 mb-2">
+              <span className="font-title text-base md:text-lg text-black tracking-widest uppercase font-medium">
+                BUILD ONCE. SCALE EVERYWHERE
+              </span>
+              <span
+                className="inline-block w-2 h-5 animate-blink"
+                style={{ backgroundColor: "#FF195F" }}
+              />
+            </div>
+
+            {/* Accent bar */}
+            <div
+              className="h-1.5 w-48 md:w-64 mb-8"
+              style={{ backgroundColor: "#5816CF" }}
+            />
+
+            {/* Date */}
+            <p
+              className="font-title text-base md:text-lg mb-4 uppercase tracking-wide font-medium"
+              style={{ color: "#FF195F" }}
+            >
+              Feb 15, 2026 - Mar 24, 2026
+            </p>
+
+            {/* Description */}
+            <p
+              className="font-body text-base md:text-lg mb-8 max-w-lg leading-relaxed"
+              style={{
+                color: "rgba(0,0,0,0.7)",
+              }}
+            >
+              A 4-week online hackathon designed to discover and accelerate the
+              most promising Web3 builders on Polkadot Hub
+            </p>
+
+            {/* Light blue progress bar */}
+            <div
+              className="h-2 w-full max-w-md mb-8"
+              style={{ backgroundColor: "#EDF4FE" }}
+            />
+
+            {/* CTAs */}
+            <div className="flex flex-col sm:flex-row gap-4 mb-10">
+              <Button variant="primary" size="lg" href="#workshops">
+                Explore
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+              <Button variant="secondary" size="lg" href="#challenges">
+                View Challenges
+              </Button>
+            </div>
+
+            {/* Made possible by */}
+            <p
+              className="font-body text-sm"
+              style={{
+                color: "rgba(0,0,0,0.5)",
+              }}
+            >
+              Made possible by{" "}
+              <span className="font-semibold" style={{ color: "#000000" }}>
+                OpenGuild
+              </span>{" "}
+              |{" "}
+              <span className="font-semibold" style={{ color: "#000000" }}>
+                Web3 Foundation
+              </span>{" "}
+              |{" "}
+              <span className="font-semibold" style={{ color: "#000000" }}>
+                Polkadot
+              </span>
+            </p>
           </div>
-          <div className="text-center">
-            <div className="text-4xl font-bold text-polkadot-pink mb-2">∞</div>
-            <div className="text-gray-400">Possibilities</div>
-          </div>
-        </motion.div>
+        </div>
       </div>
-    </Section>
+
+      {/* Decorative Dot Coin */}
+      <div className="absolute right-8 bottom-8 w-16 h-16 md:w-24 md:h-24 opacity-60">
+        <Image
+          src="/graphics/Dotted Dot Coin.png"
+          alt="Polkadot Coin"
+          fill
+          className="object-contain"
+        />
+      </div>
+    </section>
   );
 };

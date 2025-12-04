@@ -43,42 +43,50 @@ export default async function WorkshopPage({ params }: WorkshopPageProps) {
   return (
     <>
       <Header />
-      <main className="pt-24 pb-16 min-h-screen bg-gradient-to-b from-polkadot-darker to-polkadot-dark">
+      <main className="pt-24 pb-16 min-h-screen bg-white">
         <Container>
-          <Button
-            variant="outline"
-            size="sm"
-            href="/"
-            className="mb-8"
-          >
+          <Button variant="outline" size="sm" href="/" className="mb-8">
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Home
           </Button>
 
           {/* Workshop Header */}
-          <div className="bg-polkadot-gray-900 border border-polkadot-gray-700 rounded-xl p-8 mb-8">
-            <div className="flex items-start gap-4 mb-6">
-              <div className="p-4 bg-polkadot-pink/10 rounded-lg">
-                <BookOpen className="w-8 h-8 text-polkadot-pink" />
+          <div className="bg-white border-2 border-black shadow-[4px_4px_0_#000000] p-8 mb-8">
+            <div className="flex items-start gap-6 mb-6">
+              <div className="p-4 bg-blueviolet/10 border border-blueviolet/20">
+                <BookOpen className="w-8 h-8 text-blueviolet" />
               </div>
               <div className="flex-1">
-                <h1 className="text-3xl md:text-4xl font-bold mb-4">
+                <span className="font-title text-crimson text-sm tracking-widest uppercase block mb-2">
+                  Workshop
+                </span>
+                <h1 className="font-title text-2xl md:text-3xl lg:text-4xl text-blueviolet uppercase mb-4">
                   {workshop.title}
                 </h1>
-                <p className="text-xl text-gray-300 mb-6">
+                <p className="text-lg text-black/70 mb-6 leading-relaxed">
                   {workshop.description}
                 </p>
 
-                <div className="flex flex-wrap gap-6 text-sm">
-                  <div className="flex items-center gap-2 text-gray-400">
-                    <User className="w-4 h-4" />
-                    <span className="font-medium">Presenter:</span>
-                    <span className="text-white">{workshop.pic}</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-gray-400">
-                    <CheckCircle className="w-4 h-4 text-polkadot-pink" />
-                    <span className="font-medium">Deliverables:</span>
-                    <span className="text-white">{workshop.deliverables}</span>
+                <div className="border-t-2 border-dashed border-platinum pt-4">
+                  <div className="flex flex-wrap gap-6 text-sm">
+                    <div className="flex items-center gap-2 text-black/60">
+                      <User className="w-4 h-4" />
+                      <span className="font-title text-xs tracking-wide">
+                        Presenter:
+                      </span>
+                      <span className="text-black font-medium">
+                        {workshop.pic}
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-2 text-black/60">
+                      <CheckCircle className="w-4 h-4 text-crimson" />
+                      <span className="font-title text-xs tracking-wide">
+                        Deliverables:
+                      </span>
+                      <span className="text-black font-medium">
+                        {workshop.deliverables}
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -87,18 +95,18 @@ export default async function WorkshopPage({ params }: WorkshopPageProps) {
 
           {/* Video Section - Commented out as requested */}
           {/* 
-          <div className="bg-polkadot-gray-900 border border-polkadot-gray-700 rounded-xl p-8 mb-8">
-            <h2 className="text-2xl font-bold mb-4">Workshop Recording</h2>
-            <div className="aspect-video bg-polkadot-gray-800 rounded-lg flex items-center justify-center">
+          <div className="bg-white border-2 border-black shadow-[4px_4px_0_#000000] p-8 mb-8">
+            <h2 className="font-title text-xl text-blueviolet uppercase mb-4">Workshop Recording</h2>
+            <div className="aspect-video bg-water flex items-center justify-center">
               {workshop.videoUrl ? (
                 <iframe
                   src={workshop.videoUrl}
-                  className="w-full h-full rounded-lg"
+                  className="w-full h-full"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                 />
               ) : (
-                <p className="text-gray-400">Video will be available soon</p>
+                <p className="text-black/60">Video will be available soon</p>
               )}
             </div>
           </div>
@@ -106,17 +114,20 @@ export default async function WorkshopPage({ params }: WorkshopPageProps) {
 
           {/* Slides Content */}
           <div>
-            <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
-              <span className="text-polkadot-pink">Workshop Slides</span>
-            </h2>
+            <div className="flex items-center gap-3 mb-6">
+              <h2 className="font-title text-xl text-blueviolet uppercase">
+                Workshop Slides
+              </h2>
+              <span className="inline-block w-2 h-5 bg-crimson animate-blink" />
+            </div>
             {content ? (
               <SlideViewer content={content} />
             ) : (
-              <div className="text-center py-12 bg-polkadot-gray-900 border border-polkadot-gray-700 rounded-xl">
-                <p className="text-gray-400 mb-4">
+              <div className="text-center py-12 bg-water border-2 border-black shadow-[4px_4px_0_#000000]">
+                <p className="text-black/70 mb-4">
                   Slides for this workshop are being prepared.
                 </p>
-                <p className="text-sm text-gray-500">
+                <p className="text-sm text-black/50">
                   Check back soon for detailed presentation materials!
                 </p>
               </div>
@@ -128,4 +139,3 @@ export default async function WorkshopPage({ params }: WorkshopPageProps) {
     </>
   );
 }
-
