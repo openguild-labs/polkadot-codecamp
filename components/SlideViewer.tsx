@@ -26,17 +26,34 @@ const MermaidDiagram: React.FC<{ chart: string; isFullscreen: boolean }> = ({
     if (!isInitialized) {
       mermaid.initialize({
         startOnLoad: false,
-        theme: "default",
+        theme: "base",
         themeVariables: {
+          // Brand colors
           primaryColor: "#5816CF",
-          primaryTextColor: "#000",
+          primaryTextColor: "#ffffff",
           primaryBorderColor: "#5816CF",
-          lineColor: "#FF195F",
-          secondaryColor: "#EDF4FE",
-          tertiaryColor: "#ffffff",
+          secondaryColor: "#FF195F",
+          secondaryTextColor: "#ffffff",
+          secondaryBorderColor: "#FF195F",
+          tertiaryColor: "#EDF4FE",
+          tertiaryTextColor: "#000000",
+          tertiaryBorderColor: "#5816CF",
+          // Lines and arrows
+          lineColor: "#5816CF",
+          // Background
           background: "#ffffff",
-          mainBkg: "#EDF4FE",
-          secondBkg: "#ffffff",
+          mainBkg: "#5816CF",
+          secondBkg: "#FF195F",
+          // Text
+          textColor: "#000000",
+          // Nodes
+          nodeBorder: "#000000",
+          clusterBkg: "#EDF4FE",
+          clusterBorder: "#5816CF",
+          // Default node
+          defaultLinkColor: "#5816CF",
+          // Font
+          fontFamily: "Space Grotesk, system-ui, sans-serif",
         },
       });
       setIsInitialized(true);
@@ -68,12 +85,12 @@ const MermaidDiagram: React.FC<{ chart: string; isFullscreen: boolean }> = ({
   return (
     <div
       ref={mermaidRef}
-      className={`mermaid-diagram my-6 p-4 bg-water border-2 border-black shadow-[4px_4px_0_#000000] overflow-x-auto ${
+      className={`mermaid-diagram my-6 p-6 bg-white border-2 border-black shadow-[4px_4px_0_#000000] overflow-x-auto ${
         isFullscreen ? "text-base" : "text-sm"
       }`}
     >
       {!isInitialized && (
-        <div className="text-black/60">Loading diagram...</div>
+        <div className="font-body text-black/60">Loading diagram...</div>
       )}
     </div>
   );
