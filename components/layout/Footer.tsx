@@ -60,8 +60,7 @@ export const Footer: React.FC = () => {
             </div>
 
             <p className="font-body mb-8 max-w-md leading-relaxed text-lg text-white/70">
-              A 4-week online hackathon designed to discover and accelerate the
-              most promising Web3 builders on Polkadot Hub.
+              Learn about the Polkadot Hub and build your first project on it.
             </p>
 
             {/* Social Links */}

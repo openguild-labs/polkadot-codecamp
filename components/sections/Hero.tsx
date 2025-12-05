@@ -35,41 +35,6 @@ export const Hero: React.FC = () => {
       {/* Main Content Container */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 md:pt-24 relative z-10">
         <div className="flex">
-          {/* Side Navigation - Desktop Only */}
-          <div className="hidden lg:block w-48 flex-shrink-0 pt-48">
-            <nav
-              className="font-body space-y-3 text-sm"
-              style={{
-                color: "rgba(0,0,0,0.6)",
-              }}
-            >
-              <a
-                href="https://build.openguild.wtf"
-                className="block hover:text-crimson transition-colors uppercase tracking-wide font-medium"
-              >
-                Find Your Ideas
-              </a>
-              <a
-                href="https://linktr.ee/OpenGuild"
-                className="block hover:text-crimson transition-colors uppercase tracking-wide font-medium"
-              >
-                Find Teammates
-              </a>
-              <a
-                href="https://learn.openguild.wtf"
-                className="block hover:text-crimson transition-colors uppercase tracking-wide font-medium"
-              >
-                Learn Codecamp
-              </a>
-              <a
-                href="https://openguild.wtf"
-                className="block hover:text-crimson transition-colors uppercase tracking-wide font-medium"
-              >
-                About OpenGuild
-              </a>
-            </nav>
-          </div>
-
           {/* Main Content */}
           <div className="flex-1 lg:pl-8">
             {/* Badge */}
@@ -109,14 +74,6 @@ export const Hero: React.FC = () => {
               style={{ backgroundColor: "#5816CF" }}
             />
 
-            {/* Date */}
-            <p
-              className="font-title text-base md:text-lg mb-4 uppercase tracking-wide font-medium"
-              style={{ color: "#FF195F" }}
-            >
-              Feb 15, 2026 - Mar 24, 2026
-            </p>
-
             {/* Description */}
             <p
               className="font-body text-base md:text-lg mb-8 max-w-lg leading-relaxed"
@@ -124,8 +81,7 @@ export const Hero: React.FC = () => {
                 color: "rgba(0,0,0,0.7)",
               }}
             >
-              A 4-week online hackathon designed to discover and accelerate the
-              most promising Web3 builders on Polkadot Hub
+              Learn about the Polkadot Hub and build your first project on it.
             </p>
 
             {/* Light blue progress bar */}
