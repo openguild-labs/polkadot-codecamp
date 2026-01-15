@@ -74,11 +74,11 @@ graph LR
     SOL[Solidity]-.->HUB
     TOOLS[Hardhat/Foundry]-.->HUB
 
-    style ETH fill:#1a1a1a,stroke:#E6007A
-    style HUB fill:#E6007A,stroke:#fff,color:#fff
-    style CROSS fill:#552BBF,stroke:#fff,color:#fff
-    style RELAY fill:#552BBF,stroke:#fff,color:#fff
-    style PARA fill:#552BBF,stroke:#fff,color:#fff
+    style ETH fill:#1a1a1a,stroke:#00BCD4
+    style HUB fill:#00BCD4,stroke:#fff,color:#fff
+    style CROSS fill:#1a1a1a,stroke:#fff,color:#fff
+    style RELAY fill:#1a1a1a,stroke:#fff,color:#fff
+    style PARA fill:#1a1a1a,stroke:#fff,color:#fff
 ```
 
 Start building **immediately** with:
@@ -135,14 +135,14 @@ graph TB
     HUB <-->|Access| ASSETS
     ASSETS -->|Runtime Functions| HUB
 
-    style RC fill:#1a1a1a,stroke:#E6007A,stroke-width:3px
-    style AH fill:#262626,stroke:#E6007A,stroke-width:3px
-    style HUB fill:#E6007A,stroke:#fff,color:#fff
-    style RELAY fill:#552BBF,stroke:#fff,color:#fff
-    style ASSETS fill:#552BBF,stroke:#fff,color:#fff
-    style DAPPS fill:#552BBF,stroke:#fff,color:#fff
-    style CROSS fill:#552BBF,stroke:#fff,color:#fff
-    style DEFI fill:#552BBF,stroke:#fff,color:#fff
+    style RC fill:#1a1a1a,stroke:#00BCD4,stroke-width:3px
+    style AH fill:#262626,stroke:#00BCD4,stroke-width:3px
+    style HUB fill:#00BCD4,stroke:#fff,color:#fff
+    style RELAY fill:#1a1a1a,stroke:#fff,color:#fff
+    style ASSETS fill:#1a1a1a,stroke:#fff,color:#fff
+    style DAPPS fill:#1a1a1a,stroke:#fff,color:#fff
+    style CROSS fill:#1a1a1a,stroke:#fff,color:#fff
+    style DEFI fill:#1a1a1a,stroke:#fff,color:#fff
 ```
 
 **Hub**: Smart contracts on Asset Hub, Polkadot's system parachain
@@ -261,12 +261,12 @@ graph TB
     POLKAVM --> PALLET
     PALLET --> RELAY
 
-    style APP fill:#1a1a1a,stroke:#E6007A
-    style DC fill:#262626,stroke:#552BBF,stroke-width:2px
-    style REVM fill:#E6007A,stroke:#fff,color:#fff
-    style POLKAVM fill:#552BBF,stroke:#fff,color:#fff
-    style PALLET fill:#1a1a1a,stroke:#E6007A,stroke-width:2px
-    style RELAY fill:#262626,stroke:#E6007A,stroke-width:3px
+    style APP fill:#1a1a1a,stroke:#00BCD4
+    style DC fill:#262626,stroke:#1a1a1a,stroke-width:2px
+    style REVM fill:#00BCD4,stroke:#fff,color:#fff
+    style POLKAVM fill:#1a1a1a,stroke:#fff,color:#fff
+    style PALLET fill:#1a1a1a,stroke:#00BCD4,stroke-width:2px
+    style RELAY fill:#262626,stroke:#00BCD4,stroke-width:3px
 ```
 
 **Shared**: Storage, gas metering, precompiles, events
@@ -651,10 +651,10 @@ graph LR
     W3 -.-> W3A[Implement<br/>Office Hours<br/>Mentor Feedback]
     W4 -.-> W4A[Deploy Testnet<br/>Demo Video<br/>Submit]
 
-    style W1 fill:#E6007A,stroke:#fff,color:#fff
-    style W2 fill:#552BBF,stroke:#fff,color:#fff
-    style W3 fill:#E6007A,stroke:#fff,color:#fff
-    style W4 fill:#552BBF,stroke:#fff,color:#fff
+    style W1 fill:#00BCD4,stroke:#fff,color:#fff
+    style W2 fill:#1a1a1a,stroke:#fff,color:#fff
+    style W3 fill:#00BCD4,stroke:#fff,color:#fff
+    style W4 fill:#1a1a1a,stroke:#fff,color:#fff
 ```
 
 **Week 1: Foundations**

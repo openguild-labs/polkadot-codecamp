@@ -81,12 +81,12 @@ graph TB
     HUB <-->|XCM| PARA
     HUB <-->|Runtime Access| ASSETS
 
-    style RC fill:#1a1a1a,stroke:#E6007A,stroke-width:3px
-    style AH fill:#262626,stroke:#E6007A,stroke-width:3px
-    style HUB fill:#E6007A,stroke:#fff,color:#fff
-    style RELAY fill:#552BBF,stroke:#fff,color:#fff
-    style ASSETS fill:#552BBF,stroke:#fff,color:#fff
-    style PARA fill:#262626,stroke:#552BBF
+    style RC fill:#1a1a1a,stroke:#00BCD4,stroke-width:3px
+    style AH fill:#262626,stroke:#00BCD4,stroke-width:3px
+    style HUB fill:#00BCD4,stroke:#fff,color:#fff
+    style RELAY fill:#1a1a1a,stroke:#fff,color:#fff
+    style ASSETS fill:#1a1a1a,stroke:#fff,color:#fff
+    style PARA fill:#262626,stroke:#1a1a1a
 ```
 
 **Key Features:**
@@ -199,11 +199,11 @@ graph LR
     HUB -->|Access| RUNTIME[Native Asset Hub<br/>Runtime]
     HUB -->|XCM to| PARAS[All Parachains]
 
-    style DEV fill:#E6007A,stroke:#fff,color:#fff
-    style HUB fill:#552BBF,stroke:#fff,color:#fff
-    style RELAY fill:#E6007A,stroke:#fff,color:#fff
-    style RUNTIME fill:#552BBF,stroke:#fff,color:#fff
-    style PARAS fill:#E6007A,stroke:#fff,color:#fff
+    style DEV fill:#00BCD4,stroke:#fff,color:#fff
+    style HUB fill:#1a1a1a,stroke:#fff,color:#fff
+    style RELAY fill:#00BCD4,stroke:#fff,color:#fff
+    style RUNTIME fill:#1a1a1a,stroke:#fff,color:#fff
+    style PARAS fill:#00BCD4,stroke:#fff,color:#fff
 ```
 
 ---
@@ -265,10 +265,10 @@ graph TB
     end
 
     style TRAD fill:#1a1a1a,stroke:#666
-    style HUB fill:#262626,stroke:#E6007A,stroke-width:3px
-    style H1 fill:#E6007A,stroke:#fff,color:#fff
-    style H2 fill:#552BBF,stroke:#fff,color:#fff
-    style H3 fill:#E6007A,stroke:#fff,color:#fff
+    style HUB fill:#262626,stroke:#00BCD4,stroke-width:3px
+    style H1 fill:#00BCD4,stroke:#fff,color:#fff
+    style H2 fill:#1a1a1a,stroke:#fff,color:#fff
+    style H3 fill:#00BCD4,stroke:#fff,color:#fff
 ```
 
 ---
@@ -310,12 +310,12 @@ graph TB
     PRECOMPILES <--> RUNTIME
     RUNTIME --> FEATURES
 
-    style DAPP fill:#262626,stroke:#E6007A
-    style HUB fill:#1a1a1a,stroke:#E6007A,stroke-width:3px
-    style EVM fill:#E6007A,stroke:#fff,color:#fff
-    style PRECOMPILES fill:#552BBF,stroke:#fff,color:#fff
-    style RUNTIME fill:#E6007A,stroke:#fff,color:#fff
-    style FEATURES fill:#262626,stroke:#552BBF
+    style DAPP fill:#262626,stroke:#00BCD4
+    style HUB fill:#1a1a1a,stroke:#00BCD4,stroke-width:3px
+    style EVM fill:#00BCD4,stroke:#fff,color:#fff
+    style PRECOMPILES fill:#1a1a1a,stroke:#fff,color:#fff
+    style RUNTIME fill:#00BCD4,stroke:#fff,color:#fff
+    style FEATURES fill:#262626,stroke:#1a1a1a
 ```
 
 **Build Hybrid Applications:**
@@ -458,14 +458,14 @@ graph LR
     TUT --> BUILD[Practice<br/>Projects]
     BUILD --> HACK[Hackathons &<br/>Grants]
 
-    style START fill:#1a1a1a,stroke:#E6007A
-    style FUND fill:#E6007A,stroke:#fff,color:#fff
-    style TRACK fill:#552BBF,stroke:#fff,color:#fff
-    style SUB fill:#E6007A,stroke:#fff,color:#fff
-    style EVM fill:#E6007A,stroke:#fff,color:#fff
-    style TUT fill:#552BBF,stroke:#fff,color:#fff
-    style BUILD fill:#E6007A,stroke:#fff,color:#fff
-    style HACK fill:#552BBF,stroke:#fff,color:#fff
+    style START fill:#1a1a1a,stroke:#00BCD4
+    style FUND fill:#00BCD4,stroke:#fff,color:#fff
+    style TRACK fill:#1a1a1a,stroke:#fff,color:#fff
+    style SUB fill:#00BCD4,stroke:#fff,color:#fff
+    style EVM fill:#00BCD4,stroke:#fff,color:#fff
+    style TUT fill:#1a1a1a,stroke:#fff,color:#fff
+    style BUILD fill:#00BCD4,stroke:#fff,color:#fff
+    style HACK fill:#1a1a1a,stroke:#fff,color:#fff
 ```
 
 1. Start with Polkadot fundamentals
@@ -492,10 +492,10 @@ graph LR
     L3 -.-> PROD[Production Ready]
     TREAS -.-> SCALE[Ecosystem Scale]
 
-    style L1 fill:#E6007A,stroke:#fff,color:#fff
-    style L2 fill:#552BBF,stroke:#fff,color:#fff
-    style L3 fill:#E6007A,stroke:#fff,color:#fff
-    style TREAS fill:#552BBF,stroke:#fff,color:#fff
+    style L1 fill:#00BCD4,stroke:#fff,color:#fff
+    style L2 fill:#1a1a1a,stroke:#fff,color:#fff
+    style L3 fill:#00BCD4,stroke:#fff,color:#fff
+    style TREAS fill:#1a1a1a,stroke:#fff,color:#fff
 ```
 
 **Grant Tiers:**

@@ -68,9 +68,9 @@ graph TB
     ASSETS --> RESULT[Seamless Cross-Chain DeFi]
     DEFI --> RESULT
 
-    style HUB fill:#E6007A,stroke:#fff,color:#fff
-    style ASSETS fill:#552BBF,stroke:#fff,color:#fff
-    style DEFI fill:#552BBF,stroke:#fff,color:#fff
+    style HUB fill:#00BCD4,stroke:#fff,color:#fff
+    style ASSETS fill:#1a1a1a,stroke:#fff,color:#fff
+    style DEFI fill:#1a1a1a,stroke:#fff,color:#fff
     style RESULT fill:#00ff00,stroke:#fff,color:#000
 ```
 
@@ -115,11 +115,11 @@ graph TB
     MSG --> ASSET[3. What assets<br/>MultiAsset]
     MSG --> FEE[4. How to pay<br/>Fees]
 
-    style MSG fill:#E6007A,stroke:#fff,color:#fff
-    style INST fill:#552BBF,stroke:#fff,color:#fff
-    style LOC fill:#552BBF,stroke:#fff,color:#fff
-    style ASSET fill:#552BBF,stroke:#fff,color:#fff
-    style FEE fill:#552BBF,stroke:#fff,color:#fff
+    style MSG fill:#00BCD4,stroke:#fff,color:#fff
+    style INST fill:#1a1a1a,stroke:#fff,color:#fff
+    style LOC fill:#1a1a1a,stroke:#fff,color:#fff
+    style ASSET fill:#1a1a1a,stroke:#fff,color:#fff
+    style FEE fill:#1a1a1a,stroke:#fff,color:#fff
 ```
 
 **Characteristics:**
@@ -173,8 +173,8 @@ graph TB
     RELAY -.->|✅ Shared Security| GOOD3[ ]
     EXT -.->|✅ Unified Liquidity| GOOD4[ ]
 
-    style HUB fill:#E6007A,stroke:#fff,color:#fff
-    style RELAY fill:#552BBF,stroke:#fff,color:#fff
+    style HUB fill:#00BCD4,stroke:#fff,color:#fff
+    style RELAY fill:#1a1a1a,stroke:#fff,color:#fff
     style EXT fill:#00ff00,stroke:#fff,color:#000
     style GOOD1 fill:none,stroke:none
     style GOOD2 fill:none,stroke:none
@@ -461,11 +461,11 @@ graph TB
     HB -.->|Also Connects| COS[Cosmos]
     HB -.->|Also Connects| MORE[More Chains...]
 
-    style HB fill:#E6007A,stroke:#fff,color:#fff
-    style POL fill:#552BBF,stroke:#fff,color:#fff
-    style ETH fill:#552BBF,stroke:#fff,color:#fff
-    style COS fill:#1a1a1a,stroke:#E6007A
-    style MORE fill:#1a1a1a,stroke:#E6007A
+    style HB fill:#00BCD4,stroke:#fff,color:#fff
+    style POL fill:#1a1a1a,stroke:#fff,color:#fff
+    style ETH fill:#1a1a1a,stroke:#fff,color:#fff
+    style COS fill:#1a1a1a,stroke:#00BCD4
+    style MORE fill:#1a1a1a,stroke:#00BCD4
 ```
 
 ### Hyperbridge vs XCM

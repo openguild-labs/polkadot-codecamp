@@ -28,30 +28,30 @@ const MermaidDiagram: React.FC<{ chart: string; isFullscreen: boolean }> = ({
         startOnLoad: false,
         theme: "base",
         themeVariables: {
-          // Brand colors
-          primaryColor: "#5816CF",
+          // Brand colors - Primary cyan + black + white
+          primaryColor: "#00BCD4",
           primaryTextColor: "#ffffff",
-          primaryBorderColor: "#5816CF",
-          secondaryColor: "#FF195F",
+          primaryBorderColor: "#00BCD4",
+          secondaryColor: "#1a1a1a",
           secondaryTextColor: "#ffffff",
-          secondaryBorderColor: "#FF195F",
-          tertiaryColor: "#EDF4FE",
+          secondaryBorderColor: "#1a1a1a",
+          tertiaryColor: "#f5f5f5",
           tertiaryTextColor: "#000000",
-          tertiaryBorderColor: "#5816CF",
+          tertiaryBorderColor: "#00BCD4",
           // Lines and arrows
-          lineColor: "#5816CF",
+          lineColor: "#00BCD4",
           // Background
           background: "#ffffff",
-          mainBkg: "#5816CF",
-          secondBkg: "#FF195F",
+          mainBkg: "#00BCD4",
+          secondBkg: "#1a1a1a",
           // Text
           textColor: "#000000",
           // Nodes
           nodeBorder: "#000000",
-          clusterBkg: "#EDF4FE",
-          clusterBorder: "#5816CF",
+          clusterBkg: "#f5f5f5",
+          clusterBorder: "#00BCD4",
           // Default node
-          defaultLinkColor: "#5816CF",
+          defaultLinkColor: "#00BCD4",
           // Font
           fontFamily: "Space Grotesk, system-ui, sans-serif",
         },
@@ -76,7 +76,7 @@ const MermaidDiagram: React.FC<{ chart: string; isFullscreen: boolean }> = ({
         .catch((error) => {
           console.error("Mermaid rendering error:", error);
           if (mermaidRef.current) {
-            mermaidRef.current.innerHTML = `<pre class="text-crimson">Error rendering diagram: ${error.message}</pre>`;
+            mermaidRef.current.innerHTML = `<pre class="text-red-500">Error rendering diagram: ${error.message}</pre>`;
           }
         });
     }
@@ -214,7 +214,7 @@ export const SlideViewer: React.FC<SlideViewerProps> = ({ content }) => {
                 components={{
                   h1: ({ children }) => (
                     <h1
-                      className={`font-title uppercase mb-8 mt-2 text-blueviolet ${
+                      className={`font-title uppercase mb-8 mt-2 text-black ${
                         isFullscreen
                           ? "text-5xl md:text-7xl"
                           : "text-3xl md:text-5xl"
@@ -225,7 +225,7 @@ export const SlideViewer: React.FC<SlideViewerProps> = ({ content }) => {
                   ),
                   h2: ({ children }) => (
                     <h2
-                      className={`font-title uppercase mt-10 mb-6 text-blueviolet ${
+                      className={`font-title uppercase mt-10 mb-6 text-black ${
                         isFullscreen
                           ? "text-4xl md:text-6xl"
                           : "text-2xl md:text-4xl"
@@ -236,7 +236,7 @@ export const SlideViewer: React.FC<SlideViewerProps> = ({ content }) => {
                   ),
                   h3: ({ children }) => (
                     <h3
-                      className={`font-title uppercase mt-8 mb-4 text-crimson ${
+                      className={`font-title uppercase mt-8 mb-4 text-cyan ${
                         isFullscreen
                           ? "text-3xl md:text-5xl"
                           : "text-xl md:text-3xl"
@@ -284,7 +284,7 @@ export const SlideViewer: React.FC<SlideViewerProps> = ({ content }) => {
                       href={href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-crimson hover:text-blueviolet transition-colors underline"
+                      className="text-cyan hover:text-cyan-dark transition-colors underline"
                     >
                       {children}
                     </a>
@@ -322,7 +322,7 @@ export const SlideViewer: React.FC<SlideViewerProps> = ({ content }) => {
                           customStyle={{
                             margin: 0,
                             padding: isFullscreen ? "1.5rem" : "1rem",
-                            background: "#EDF4FE",
+                            background: "#f5f5f5",
                             borderRadius: 0,
                           }}
                           {...props}
@@ -336,13 +336,13 @@ export const SlideViewer: React.FC<SlideViewerProps> = ({ content }) => {
                     if (!inline) {
                       return (
                         <pre
-                          className={`bg-water p-6 overflow-x-auto mb-6 border-2 border-black shadow-[4px_4px_0_#000000] font-mono ${
+                          className={`bg-gray-50 p-6 overflow-x-auto mb-6 border-2 border-black shadow-[4px_4px_0_#000000] font-mono ${
                             isFullscreen
                               ? "text-base md:text-xl"
                               : "text-sm md:text-base"
                           }`}
                         >
-                          <code className="text-blueviolet">{children}</code>
+                          <code className="text-black">{children}</code>
                         </pre>
                       );
                     }
@@ -350,7 +350,7 @@ export const SlideViewer: React.FC<SlideViewerProps> = ({ content }) => {
                     // Inline code
                     return (
                       <code
-                        className={`bg-water text-crimson px-2 py-1 font-mono border border-platinum ${
+                        className={`bg-gray-100 text-cyan-dark px-2 py-1 font-mono border border-gray-200 ${
                           isFullscreen ? "text-base md:text-lg" : "text-sm"
                         }`}
                         {...props}
@@ -360,7 +360,7 @@ export const SlideViewer: React.FC<SlideViewerProps> = ({ content }) => {
                     );
                   },
                   blockquote: ({ children }) => (
-                    <blockquote className="font-body border-l-4 border-crimson pl-4 italic text-black/60 my-4">
+                    <blockquote className="font-body border-l-4 border-cyan pl-4 italic text-black/60 my-4">
                       {children}
                     </blockquote>
                   ),
@@ -372,13 +372,13 @@ export const SlideViewer: React.FC<SlideViewerProps> = ({ content }) => {
                     </div>
                   ),
                   thead: ({ children }) => (
-                    <thead className="bg-blueviolet text-white">{children}</thead>
+                    <thead className="bg-black text-white">{children}</thead>
                   ),
                   tbody: ({ children }) => (
                     <tbody className="bg-white">{children}</tbody>
                   ),
                   tr: ({ children }) => (
-                    <tr className="border-b-2 border-black hover:bg-water transition-colors">
+                    <tr className="border-b-2 border-black hover:bg-gray-50 transition-colors">
                       {children}
                     </tr>
                   ),
@@ -438,7 +438,7 @@ export const SlideViewer: React.FC<SlideViewerProps> = ({ content }) => {
           <button
             onClick={prevSlide}
             disabled={currentSlide === 0}
-            className={`flex items-center gap-2 px-4 bg-blueviolet text-white hover:bg-crimson disabled:opacity-30 disabled:cursor-not-allowed transition-colors font-title uppercase tracking-wider ${
+            className={`flex items-center gap-2 px-4 bg-gray-700 text-white hover:bg-cyan disabled:opacity-30 disabled:cursor-not-allowed transition-colors font-title uppercase tracking-wider ${
               isFullscreen ? "py-3 text-lg" : "py-2 text-sm"
             }`}
           >
@@ -464,7 +464,7 @@ export const SlideViewer: React.FC<SlideViewerProps> = ({ content }) => {
                   onClick={() => setCurrentSlide(index)}
                   className={`w-2 h-2 transition-colors ${
                     index === currentSlide
-                      ? "bg-crimson"
+                      ? "bg-cyan"
                       : "bg-white/30 hover:bg-white/50"
                   }`}
                   aria-label={`Go to slide ${index + 1}`}
@@ -482,7 +482,7 @@ export const SlideViewer: React.FC<SlideViewerProps> = ({ content }) => {
           <div className="flex items-center gap-2">
             <button
               onClick={toggleFullscreen}
-              className={`bg-white/10 hover:bg-blueviolet text-white transition-colors ${
+              className={`bg-white/10 hover:bg-cyan text-white transition-colors ${
                 isFullscreen ? "p-3" : "p-2"
               }`}
               aria-label="Toggle fullscreen"
@@ -497,7 +497,7 @@ export const SlideViewer: React.FC<SlideViewerProps> = ({ content }) => {
             <button
               onClick={nextSlide}
               disabled={currentSlide === slides.length - 1}
-              className={`flex items-center gap-2 px-4 bg-crimson text-white hover:bg-blueviolet disabled:opacity-30 disabled:cursor-not-allowed transition-colors font-title uppercase tracking-wider ${
+              className={`flex items-center gap-2 px-4 bg-cyan text-white hover:bg-cyan-dark disabled:opacity-30 disabled:cursor-not-allowed transition-colors font-title uppercase tracking-wider ${
                 isFullscreen ? "py-3 text-lg" : "py-2 text-sm"
               }`}
             >
@@ -512,11 +512,11 @@ export const SlideViewer: React.FC<SlideViewerProps> = ({ content }) => {
       {!isFullscreen && (
         <div className="mt-4 text-center text-sm text-black/50">
           <p>
-            Use <kbd className="px-2 py-1 bg-water border border-platinum font-title text-xs">←</kbd>{" "}
-            <kbd className="px-2 py-1 bg-water border border-platinum font-title text-xs">→</kbd> or{" "}
-            <kbd className="px-2 py-1 bg-water border border-platinum font-title text-xs">Space</kbd>{" "}
+            Use <kbd className="px-2 py-1 bg-gray-100 border border-gray-200 font-title text-xs">←</kbd>{" "}
+            <kbd className="px-2 py-1 bg-gray-100 border border-gray-200 font-title text-xs">→</kbd> or{" "}
+            <kbd className="px-2 py-1 bg-gray-100 border border-gray-200 font-title text-xs">Space</kbd>{" "}
             to navigate • Press{" "}
-            <kbd className="px-2 py-1 bg-water border border-platinum font-title text-xs">F</kbd> for
+            <kbd className="px-2 py-1 bg-gray-100 border border-gray-200 font-title text-xs">F</kbd> for
             fullscreen
           </p>
         </div>

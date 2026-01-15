@@ -50,9 +50,9 @@ graph LR
     BC[Blockchain] --> VM[Single VM<br/>EVM or WASM]
     VM --> SC[Smart Contracts]
 
-    style BC fill:#1a1a1a,stroke:#E6007A
-    style VM fill:#E6007A,stroke:#fff,color:#fff
-    style SC fill:#552BBF,stroke:#fff,color:#fff
+    style BC fill:#1a1a1a,stroke:#00BCD4
+    style VM fill:#00BCD4,stroke:#fff,color:#fff
+    style SC fill:#1a1a1a,stroke:#fff,color:#fff
 ```
 
 **Polkadot Solidity Dual VM:**
@@ -71,11 +71,11 @@ graph TB
     PALLET --> POLKAVM
     HUB -.->|Secured by| RELAY
 
-    style HUB fill:#262626,stroke:#E6007A,stroke-width:2px
-    style PALLET fill:#1a1a1a,stroke:#E6007A
-    style REVM fill:#E6007A,stroke:#fff,color:#fff
-    style POLKAVM fill:#552BBF,stroke:#fff,color:#fff
-    style RELAY fill:#E6007A,stroke:#fff,color:#fff
+    style HUB fill:#262626,stroke:#00BCD4,stroke-width:2px
+    style PALLET fill:#1a1a1a,stroke:#00BCD4
+    style REVM fill:#00BCD4,stroke:#fff,color:#fff
+    style POLKAVM fill:#1a1a1a,stroke:#fff,color:#fff
+    style RELAY fill:#00BCD4,stroke:#fff,color:#fff
 ```
 
 ### Polkadot Solidity's Dual VM Strategy
@@ -160,15 +160,15 @@ graph TB
     START --> WALLET[7. Wallet MetaMask]
     START --> RPC[8. RPC Configuration]
 
-    style START fill:#E6007A,stroke:#fff,color:#fff
-    style NODE fill:#1a1a1a,stroke:#E6007A
-    style VSCODE fill:#1a1a1a,stroke:#E6007A
-    style DOCKER fill:#1a1a1a,stroke:#E6007A
-    style FOUNDRY fill:#1a1a1a,stroke:#E6007A
-    style HARDHAT fill:#1a1a1a,stroke:#E6007A
-    style SCAFFOLD fill:#1a1a1a,stroke:#E6007A
-    style WALLET fill:#1a1a1a,stroke:#E6007A
-    style RPC fill:#1a1a1a,stroke:#E6007A
+    style START fill:#00BCD4,stroke:#fff,color:#fff
+    style NODE fill:#1a1a1a,stroke:#00BCD4
+    style VSCODE fill:#1a1a1a,stroke:#00BCD4
+    style DOCKER fill:#1a1a1a,stroke:#00BCD4
+    style FOUNDRY fill:#1a1a1a,stroke:#00BCD4
+    style HARDHAT fill:#1a1a1a,stroke:#00BCD4
+    style SCAFFOLD fill:#1a1a1a,stroke:#00BCD4
+    style WALLET fill:#1a1a1a,stroke:#00BCD4
+    style RPC fill:#1a1a1a,stroke:#00BCD4
 ```
 
 ### Prerequisites
@@ -862,10 +862,10 @@ graph TB
     NJ --> STYLE[styles/]
     NJ --> NEXT[next.config.js]
 
-    style ROOT fill:#E6007A,stroke:#fff,color:#fff
-    style PKG fill:#552BBF,stroke:#fff,color:#fff
-    style HH fill:#E6007A,stroke:#fff,color:#fff
-    style NJ fill:#E6007A,stroke:#fff,color:#fff
+    style ROOT fill:#00BCD4,stroke:#fff,color:#fff
+    style PKG fill:#1a1a1a,stroke:#fff,color:#fff
+    style HH fill:#00BCD4,stroke:#fff,color:#fff
+    style NJ fill:#00BCD4,stroke:#fff,color:#fff
 ```
 
 ### Running Scaffold DOT
@@ -1179,10 +1179,10 @@ graph TB
     PROJ --> GIT[.gitignore<br/>Ignore Sensitive Files]
     PROJ --> README[README.md<br/>Documentation]
 
-    style PROJ fill:#E6007A,stroke:#fff,color:#fff
-    style SRC fill:#552BBF,stroke:#fff,color:#fff
-    style TEST fill:#552BBF,stroke:#fff,color:#fff
-    style SCRIPT fill:#552BBF,stroke:#fff,color:#fff
+    style PROJ fill:#00BCD4,stroke:#fff,color:#fff
+    style SRC fill:#1a1a1a,stroke:#fff,color:#fff
+    style TEST fill:#1a1a1a,stroke:#fff,color:#fff
+    style SCRIPT fill:#1a1a1a,stroke:#fff,color:#fff
 ```
 
 ### Security Checklist

@@ -53,21 +53,21 @@ export default async function WorkshopPage({ params }: WorkshopPageProps) {
           {/* Workshop Header */}
           <div className="bg-white border-2 border-black shadow-[4px_4px_0_#000000] p-8 mb-8">
             <div className="flex items-start gap-6 mb-6">
-              <div className="p-4 bg-blueviolet/10 border border-blueviolet/20">
-                <BookOpen className="w-8 h-8 text-blueviolet" />
+              <div className="p-4 bg-cyan/10 border border-cyan/20">
+                <BookOpen className="w-8 h-8 text-cyan-dark" />
               </div>
               <div className="flex-1">
-                <span className="font-title text-crimson text-sm tracking-widest uppercase block mb-2">
+                <span className="font-title text-cyan text-sm tracking-widest uppercase block mb-2">
                   Workshop
                 </span>
-                <h1 className="font-title text-2xl md:text-3xl lg:text-4xl text-blueviolet uppercase mb-4">
+                <h1 className="font-title text-2xl md:text-3xl lg:text-4xl text-black uppercase mb-4">
                   {workshop.title}
                 </h1>
                 <p className="text-lg text-black/70 mb-6 leading-relaxed">
                   {workshop.description}
                 </p>
 
-                <div className="border-t-2 border-dashed border-platinum pt-4">
+                <div className="border-t-2 border-dashed border-gray-200 pt-4">
                   <div className="flex flex-wrap gap-6 text-sm">
                     <div className="flex items-center gap-2 text-black/60">
                       <User className="w-4 h-4" />
@@ -79,7 +79,7 @@ export default async function WorkshopPage({ params }: WorkshopPageProps) {
                       </span>
                     </div>
                     <div className="flex items-center gap-2 text-black/60">
-                      <CheckCircle className="w-4 h-4 text-crimson" />
+                      <CheckCircle className="w-4 h-4 text-cyan" />
                       <span className="font-title text-xs tracking-wide">
                         Deliverables:
                       </span>
@@ -96,8 +96,8 @@ export default async function WorkshopPage({ params }: WorkshopPageProps) {
           {/* Video Section - Commented out as requested */}
           {/* 
           <div className="bg-white border-2 border-black shadow-[4px_4px_0_#000000] p-8 mb-8">
-            <h2 className="font-title text-xl text-blueviolet uppercase mb-4">Workshop Recording</h2>
-            <div className="aspect-video bg-water flex items-center justify-center">
+            <h2 className="font-title text-xl text-black uppercase mb-4">Workshop Recording</h2>
+            <div className="aspect-video bg-gray-50 flex items-center justify-center">
               {workshop.videoUrl ? (
                 <iframe
                   src={workshop.videoUrl}
@@ -115,15 +115,15 @@ export default async function WorkshopPage({ params }: WorkshopPageProps) {
           {/* Slides Content */}
           <div>
             <div className="flex items-center gap-3 mb-6">
-              <h2 className="font-title text-xl text-blueviolet uppercase">
+              <h2 className="font-title text-xl text-black uppercase">
                 Workshop Slides
               </h2>
-              <span className="inline-block w-2 h-5 bg-crimson animate-blink" />
+              <span className="inline-block w-2 h-5 bg-cyan animate-blink" />
             </div>
             {content ? (
               <SlideViewer content={content} />
             ) : (
-              <div className="text-center py-12 bg-water border-2 border-black shadow-[4px_4px_0_#000000]">
+              <div className="text-center py-12 bg-gray-50 border-2 border-black shadow-[4px_4px_0_#000000]">
                 <p className="text-black/70 mb-4">
                   Slides for this workshop are being prepared.
                 </p>

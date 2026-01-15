@@ -63,11 +63,11 @@ graph TB
     HACK --> BUILD[Substrate Builders]
     HACK --> VC[VC Funding]
 
-    style ROOT fill:#E6007A,stroke:#fff,color:#fff
-    style W3F fill:#552BBF,stroke:#fff,color:#fff
-    style TREAS fill:#552BBF,stroke:#fff,color:#fff
-    style PARA fill:#552BBF,stroke:#fff,color:#fff
-    style HACK fill:#552BBF,stroke:#fff,color:#fff
+    style ROOT fill:#00BCD4,stroke:#fff,color:#fff
+    style W3F fill:#1a1a1a,stroke:#fff,color:#fff
+    style TREAS fill:#1a1a1a,stroke:#fff,color:#fff
+    style PARA fill:#1a1a1a,stroke:#fff,color:#fff
+    style HACK fill:#1a1a1a,stroke:#fff,color:#fff
 ```
 
 ### Funding by Stage
@@ -143,11 +143,11 @@ graph TB
         L3EXAMPLES[Examples:<br/>- Parachain development<br/>- Major protocol upgrade<br/>- Large infrastructure<br/>- Ecosystem-wide tool]
     end
 
-    style LEVEL1 fill:#E6007A,stroke:#fff,color:#fff
-    style LEVEL2 fill:#552BBF,stroke:#fff,color:#fff
+    style LEVEL1 fill:#00BCD4,stroke:#fff,color:#fff
+    style LEVEL2 fill:#1a1a1a,stroke:#fff,color:#fff
     style LEVEL3 fill:#00B2FF,stroke:#fff,color:#fff
-    style L1EXAMPLES fill:#1a1a1a,stroke:#E6007A,color:#fff
-    style L2EXAMPLES fill:#1a1a1a,stroke:#552BBF,color:#fff
+    style L1EXAMPLES fill:#1a1a1a,stroke:#00BCD4,color:#fff
+    style L2EXAMPLES fill:#1a1a1a,stroke:#1a1a1a,color:#fff
     style L3EXAMPLES fill:#1a1a1a,stroke:#00B2FF,color:#fff
 ```
 
@@ -169,11 +169,11 @@ graph LR
     L3 --> TREASURY[Treasury<br/>Proposals<br/>$50k-$500k+]
     TREASURY --> ECOSYSTEM[Ecosystem<br/>Contributor]
 
-    style START fill:#E6007A,stroke:#fff,color:#fff
-    style L1 fill:#552BBF,stroke:#fff,color:#fff
+    style START fill:#00BCD4,stroke:#fff,color:#fff
+    style L1 fill:#1a1a1a,stroke:#fff,color:#fff
     style L2 fill:#00B2FF,stroke:#fff,color:#fff
-    style L3 fill:#E6007A,stroke:#fff,color:#fff
-    style TREASURY fill:#552BBF,stroke:#fff,color:#fff
+    style L3 fill:#00BCD4,stroke:#fff,color:#fff
+    style TREASURY fill:#1a1a1a,stroke:#fff,color:#fff
     style ECOSYSTEM fill:#00ff00,stroke:#fff,color:#000
 ```
 
@@ -200,8 +200,8 @@ graph LR
     DELIVER --> REPUTATION[⭐ Build Reputation]
     REPUTATION --> NEXT[➡️ Level 2]
 
-    style IDEA fill:#E6007A,stroke:#fff,color:#fff
-    style APPLY fill:#552BBF,stroke:#fff,color:#fff
+    style IDEA fill:#00BCD4,stroke:#fff,color:#fff
+    style APPLY fill:#1a1a1a,stroke:#fff,color:#fff
     style BUILD fill:#00B2FF,stroke:#fff,color:#fff
     style DELIVER fill:#00ff00,stroke:#fff,color:#000
 ```
@@ -281,8 +281,8 @@ graph TB
     M2 --> M3[Milestone 3]
     M3 --> COMPLETE[✅ Complete]
 
-    style TRACK fill:#E6007A,stroke:#fff,color:#fff
-    style SUBMIT fill:#552BBF,stroke:#fff,color:#fff
+    style TRACK fill:#00BCD4,stroke:#fff,color:#fff
+    style SUBMIT fill:#1a1a1a,stroke:#fff,color:#fff
     style MILESTONE fill:#00B2FF,stroke:#fff,color:#fff
     style COMPLETE fill:#00ff00,stroke:#fff,color:#000
 ```
@@ -366,8 +366,8 @@ graph TB
     REPORT --> SUCCESS[✅ Project Complete]
     SUCCESS --> MAINTAIN[Long-term<br/>Maintenance]
 
-    style ESTABLISH fill:#E6007A,stroke:#fff,color:#fff
-    style APP fill:#552BBF,stroke:#fff,color:#fff
+    style ESTABLISH fill:#00BCD4,stroke:#fff,color:#fff
+    style APP fill:#1a1a1a,stroke:#fff,color:#fff
     style EXECUTE fill:#00B2FF,stroke:#fff,color:#fff
     style SUCCESS fill:#00ff00,stroke:#fff,color:#000
 ```
@@ -464,8 +464,8 @@ graph TB
 
     DECISION -->|Rejected| REJECT[Rejected]
 
-    style START fill:#E6007A,stroke:#fff,color:#fff
-    style SUBMIT fill:#552BBF,stroke:#fff,color:#fff
+    style START fill:#00BCD4,stroke:#fff,color:#fff
+    style SUBMIT fill:#1a1a1a,stroke:#fff,color:#fff
     style APPROVE fill:#00ff00,stroke:#fff,color:#000
     style REJECT fill:#ff0000,stroke:#fff,color:#fff
 ```
@@ -530,10 +530,10 @@ graph TB
     PROFIT --> REJECT
 
     style HIGH fill:#00ff00,stroke:#fff,color:#000
-    style MED fill:#E6007A,stroke:#fff,color:#fff
+    style MED fill:#00BCD4,stroke:#fff,color:#fff
     style LOW fill:#ff0000,stroke:#fff,color:#fff
-    style IMPACT1 fill:#552BBF,stroke:#fff,color:#fff
-    style IMPACT2 fill:#552BBF,stroke:#fff,color:#fff
+    style IMPACT1 fill:#1a1a1a,stroke:#fff,color:#fff
+    style IMPACT2 fill:#1a1a1a,stroke:#fff,color:#fff
 ```
 
 ---
@@ -559,10 +559,10 @@ graph LR
     PROJ3 --> USERS3[Users]
     PROJN --> USERSN[Users]
 
-    style TOOL fill:#E6007A,stroke:#fff,color:#fff
-    style PROJ1 fill:#552BBF,stroke:#fff,color:#fff
-    style PROJ2 fill:#552BBF,stroke:#fff,color:#fff
-    style PROJ3 fill:#552BBF,stroke:#fff,color:#fff
+    style TOOL fill:#00BCD4,stroke:#fff,color:#fff
+    style PROJ1 fill:#1a1a1a,stroke:#fff,color:#fff
+    style PROJ2 fill:#1a1a1a,stroke:#fff,color:#fff
+    style PROJ3 fill:#1a1a1a,stroke:#fff,color:#fff
 ```
 
 **Categories & Examples:**
@@ -642,8 +642,8 @@ graph TB
     ANALYTICS --> PARA
     ARCHIVE --> ANALYSTS
 
-    style INFRA fill:#552BBF,stroke:#fff,color:#fff
-    style USERS fill:#E6007A,stroke:#fff,color:#fff
+    style INFRA fill:#1a1a1a,stroke:#fff,color:#fff
+    style USERS fill:#00BCD4,stroke:#fff,color:#fff
 ```
 
 **Infrastructure Project Types:**
@@ -859,13 +859,13 @@ graph TB
     VISION --> V3[Maintenance]
     VISION --> V4[Community Benefit]
 
-    style PROPOSAL fill:#E6007A,stroke:#fff,color:#fff
-    style OVERVIEW fill:#552BBF,stroke:#fff,color:#fff
-    style TEAM fill:#552BBF,stroke:#fff,color:#fff
-    style TECH fill:#552BBF,stroke:#fff,color:#fff
-    style MILESTONES fill:#552BBF,stroke:#fff,color:#fff
-    style BUDGET fill:#552BBF,stroke:#fff,color:#fff
-    style VISION fill:#552BBF,stroke:#fff,color:#fff
+    style PROPOSAL fill:#00BCD4,stroke:#fff,color:#fff
+    style OVERVIEW fill:#1a1a1a,stroke:#fff,color:#fff
+    style TEAM fill:#1a1a1a,stroke:#fff,color:#fff
+    style TECH fill:#1a1a1a,stroke:#fff,color:#fff
+    style MILESTONES fill:#1a1a1a,stroke:#fff,color:#fff
+    style BUDGET fill:#1a1a1a,stroke:#fff,color:#fff
+    style VISION fill:#1a1a1a,stroke:#fff,color:#fff
 ```
 
 ### Proposal Quality Checklist
@@ -897,14 +897,14 @@ graph LR
     FIX6 --> Q6
     Q6 -->|Yes| READY[✅ Ready to Submit!]
 
-    style START fill:#E6007A,stroke:#fff,color:#fff
+    style START fill:#00BCD4,stroke:#fff,color:#fff
     style READY fill:#00ff00,stroke:#fff,color:#000
-    style Q1 fill:#552BBF,stroke:#fff,color:#fff
-    style Q2 fill:#552BBF,stroke:#fff,color:#fff
-    style Q3 fill:#552BBF,stroke:#fff,color:#fff
-    style Q4 fill:#552BBF,stroke:#fff,color:#fff
-    style Q5 fill:#552BBF,stroke:#fff,color:#fff
-    style Q6 fill:#552BBF,stroke:#fff,color:#fff
+    style Q1 fill:#1a1a1a,stroke:#fff,color:#fff
+    style Q2 fill:#1a1a1a,stroke:#fff,color:#fff
+    style Q3 fill:#1a1a1a,stroke:#fff,color:#fff
+    style Q4 fill:#1a1a1a,stroke:#fff,color:#fff
+    style Q5 fill:#1a1a1a,stroke:#fff,color:#fff
+    style Q6 fill:#1a1a1a,stroke:#fff,color:#fff
 ```
 
 ---
@@ -1673,11 +1673,11 @@ graph TB
     SUCCESS --> BUILD[⭐ Build Reputation]
     BUILD --> NEXT[➡️ Next Grant]
 
-    style START fill:#E6007A,stroke:#fff,color:#fff
-    style PREP fill:#552BBF,stroke:#fff,color:#fff
+    style START fill:#00BCD4,stroke:#fff,color:#fff
+    style PREP fill:#1a1a1a,stroke:#fff,color:#fff
     style WRITE fill:#00B2FF,stroke:#fff,color:#fff
-    style REVIEW fill:#E6007A,stroke:#fff,color:#fff
-    style WAIT fill:#552BBF,stroke:#fff,color:#fff
+    style REVIEW fill:#00BCD4,stroke:#fff,color:#fff
+    style WAIT fill:#1a1a1a,stroke:#fff,color:#fff
     style EXECUTE fill:#00B2FF,stroke:#fff,color:#fff
     style SUCCESS fill:#00ff00,stroke:#fff,color:#000
 ````
@@ -1699,10 +1699,10 @@ graph LR
     W4 -.-> W4A[Team Review<br/>Get Feedback<br/>Revise]
     W5 -.-> W5A[Submit PR<br/>Respond<br/>Interview]
 
-    style W1 fill:#E6007A,stroke:#fff,color:#fff
-    style W3 fill:#552BBF,stroke:#fff,color:#fff
-    style W4 fill:#E6007A,stroke:#fff,color:#fff
-    style W5 fill:#552BBF,stroke:#fff,color:#fff
+    style W1 fill:#00BCD4,stroke:#fff,color:#fff
+    style W3 fill:#1a1a1a,stroke:#fff,color:#fff
+    style W4 fill:#00BCD4,stroke:#fff,color:#fff
+    style W5 fill:#1a1a1a,stroke:#fff,color:#fff
 ```
 
 **Week 1-2: Preparation**
@@ -1934,10 +1934,10 @@ graph TB
     REP5 --> ECOSYSTEM[Ecosystem Leader]
     ECOSYSTEM --> GIVE[Give Back:<br/>- Review Grants<br/>- Mentor Teams<br/>- Advisory Roles<br/>- Governance]
 
-    style START fill:#E6007A,stroke:#fff,color:#fff
-    style GRANT1 fill:#552BBF,stroke:#fff,color:#fff
+    style START fill:#00BCD4,stroke:#fff,color:#fff
+    style GRANT1 fill:#1a1a1a,stroke:#fff,color:#fff
     style GRANT2 fill:#00B2FF,stroke:#fff,color:#fff
-    style GRANT3 fill:#E6007A,stroke:#fff,color:#fff
+    style GRANT3 fill:#00BCD4,stroke:#fff,color:#fff
     style ECOSYSTEM fill:#00ff00,stroke:#fff,color:#000
     style REP1 fill:#ffcc00,stroke:#fff,color:#000
     style REP2 fill:#ffcc00,stroke:#fff,color:#000
@@ -1963,11 +1963,11 @@ graph LR
     SUCCESS --> REPUTATION[⭐ Strong Reputation]
     REPUTATION --> NEXT[➡️ Next Opportunity]
 
-    style QUALITY fill:#E6007A,stroke:#fff,color:#fff
-    style DEADLINE fill:#552BBF,stroke:#fff,color:#fff
+    style QUALITY fill:#00BCD4,stroke:#fff,color:#fff
+    style DEADLINE fill:#1a1a1a,stroke:#fff,color:#fff
     style COMM fill:#00B2FF,stroke:#fff,color:#fff
-    style DOCS fill:#E6007A,stroke:#fff,color:#fff
-    style HELP fill:#552BBF,stroke:#fff,color:#fff
+    style DOCS fill:#00BCD4,stroke:#fff,color:#fff
+    style HELP fill:#1a1a1a,stroke:#fff,color:#fff
     style SUCCESS fill:#00ff00,stroke:#fff,color:#000
 ```
 
@@ -2030,10 +2030,10 @@ graph TB
     PREPARE --> BIGGER[🚀 Larger Opportunity]
 
     style COMPLETE fill:#00ff00,stroke:#fff,color:#000
-    style SHARE fill:#E6007A,stroke:#fff,color:#fff
-    style MAINTAIN fill:#552BBF,stroke:#fff,color:#fff
+    style SHARE fill:#00BCD4,stroke:#fff,color:#fff
+    style MAINTAIN fill:#1a1a1a,stroke:#fff,color:#fff
     style ENGAGE fill:#00B2FF,stroke:#fff,color:#fff
-    style BIGGER fill:#E6007A,stroke:#fff,color:#fff
+    style BIGGER fill:#00BCD4,stroke:#fff,color:#fff
 ```
 
 ### Building Track Record: The 3-Grant Strategy
@@ -2072,8 +2072,8 @@ graph LR
     PHASE2 --> PHASE3
     PHASE3 --> PHASE4
 
-    style PHASE1 fill:#E6007A,stroke:#fff,color:#fff
-    style PHASE2 fill:#552BBF,stroke:#fff,color:#fff
+    style PHASE1 fill:#00BCD4,stroke:#fff,color:#fff
+    style PHASE2 fill:#1a1a1a,stroke:#fff,color:#fff
     style PHASE3 fill:#00B2FF,stroke:#fff,color:#fff
     style PHASE4 fill:#00ff00,stroke:#fff,color:#000
 ```
