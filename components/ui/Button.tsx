@@ -4,7 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 
 interface ButtonProps {
-  variant?: "primary" | "secondary" | "outline";
+  variant?: "primary" | "secondary" | "outline" | "ghost";
   size?: "sm" | "md" | "lg";
   children: React.ReactNode;
   href?: string;
@@ -25,30 +25,13 @@ export const Button: React.FC<ButtonProps> = ({
   disabled = false,
 }) => {
   const baseClasses =
-    "font-title uppercase tracking-wider inline-flex items-center justify-center transition-all duration-200 font-semibold";
+    "font-title uppercase tracking-wider inline-flex items-center justify-center transition-all duration-200 font-medium";
 
   const variants = {
-    primary:
-      "text-white hover:brightness-110 active:translate-x-[2px] active:translate-y-[2px]",
-    secondary:
-      "text-white hover:brightness-110 active:translate-x-[2px] active:translate-y-[2px]",
-    outline:
-      "border-2 bg-white hover:text-white",
-  };
-
-  const variantStyles = {
-    primary: {
-      backgroundColor: '#5816CF',
-      boxShadow: '4px 4px 0 #000000',
-    },
-    secondary: {
-      backgroundColor: '#FF195F',
-      boxShadow: '4px 4px 0 #000000',
-    },
-    outline: {
-      borderColor: '#5816CF',
-      color: '#5816CF',
-    },
+    primary: "text-white bg-black hover:bg-gray-800",
+    secondary: "text-black bg-cyan hover:bg-cyan-dark",
+    outline: "border-2 border-black text-black bg-transparent hover:bg-black hover:text-white",
+    ghost: "text-black bg-transparent hover:bg-gray-100",
   };
 
   const sizes = {
@@ -64,16 +47,8 @@ export const Button: React.FC<ButtonProps> = ({
       <motion.a
         href={href}
         className={buttonClasses}
-        style={variantStyles[variant]}
-        whileHover={{ 
-          scale: 1.02,
-          boxShadow: variant !== 'outline' ? '6px 6px 0 #000000' : undefined,
-          backgroundColor: variant === 'outline' ? '#5816CF' : undefined,
-        }}
-        whileTap={{ 
-          scale: 0.98,
-          boxShadow: variant !== 'outline' ? '2px 2px 0 #000000' : undefined,
-        }}
+        whileHover={{ scale: 1.02 }}
+        whileTap={{ scale: 0.98 }}
         target={href.startsWith("http") ? "_blank" : undefined}
         rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
       >
@@ -85,16 +60,8 @@ export const Button: React.FC<ButtonProps> = ({
   return (
     <motion.button
       className={buttonClasses}
-      style={variantStyles[variant]}
-      whileHover={{ 
-        scale: 1.02,
-        boxShadow: variant !== 'outline' ? '6px 6px 0 #000000' : undefined,
-        backgroundColor: variant === 'outline' ? '#5816CF' : undefined,
-      }}
-      whileTap={{ 
-        scale: 0.98,
-        boxShadow: variant !== 'outline' ? '2px 2px 0 #000000' : undefined,
-      }}
+      whileHover={{ scale: 1.02 }}
+      whileTap={{ scale: 0.98 }}
       onClick={onClick}
       type={type}
       disabled={disabled}

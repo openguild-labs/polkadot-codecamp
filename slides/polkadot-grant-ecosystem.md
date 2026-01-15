@@ -89,7 +89,7 @@ graph TB
 
 **Scale Stage:**
 
-- Polkadot Hub Deployment
+- Polkadot Solidity Deployment
 - VC Funding
 - Revenue generation
 
@@ -2259,32 +2259,32 @@ A: No. Request what you actually need with justification.
 
 ---
 
-### Case Study 2: DeFi Protocol on Polkadot Hub
+### Case Study 2: DeFi Protocol on Polkadot Solidity
 
 **Journey:**
 
 - Started with hackathon prototype
 - Won initial prizes
 - Applied for Level 1 grant
-- Built MVP on Polkadot Hub testnet
+- Built MVP on Polkadot Solidity testnet
 - Secured Level 2 funding
 
 **Key Lessons:**
 
 - Prove concept first
-- Use Polkadot Hub for quick deployment
+- Use Polkadot Solidity for quick deployment
 - Build in public
 - Engage community early
 - Leverage EVM tooling
 
 ---
 
-### Case Study 3: NFT Platform on Polkadot Hub
+### Case Study 3: NFT Platform on Polkadot Solidity
 
 **Strategy:**
 
 - Clear value proposition: Easy NFT creation
-- Built on Polkadot Hub for accessibility
+- Built on Polkadot Solidity for accessibility
 - Strong technical team
 - Excellent execution and UX
 

@@ -57,7 +57,7 @@ By the end of this session, you will:
 - Create cross-chain DeFi with XCM precompiles
 - Leverage Asset Hub's native asset management
 
-### Technical Foundation: Polkadot Hub on Asset Hub
+### Technical Foundation: Polkadot Solidity on Asset Hub
 
 ```mermaid
 graph TB
@@ -66,7 +66,7 @@ graph TB
     end
 
     subgraph AH[ASSET HUB - System Parachain]
-        HUB[Polkadot Hub<br/>Smart Contracts<br/>REVM + PolkaVM]
+        HUB[Polkadot Solidity<br/>Smart Contracts<br/>REVM + PolkaVM]
         ASSETS[Native Assets<br/>& Runtime]
     end
 
@@ -96,8 +96,6 @@ graph TB
 - XCM precompiles for cross-chain calls
 - Advanced precompiles (privacy, account abstraction)
 
-![Polkadot Hub Architecture](https://via.placeholder.com/800x400/0D0D0D/552BBF?text=Polkadot+Hub)
-
 ---
 
 ## 🔄 Narrative 2: True Interoperability via XCM
@@ -114,7 +112,7 @@ Polkadot enables native cross-chain communication without bridges:
 
 ```mermaid
 sequenceDiagram
-    participant SC as Your Smart Contract<br/>(Polkadot Hub)
+    participant SC as Your Smart Contract<br/>(Polkadot Solidity)
     participant XCM as XCM Precompile
     participant RELAY as Relay Chain
     participant PARA as Target Parachain
@@ -164,7 +162,7 @@ sequenceDiagram
 - Limited access to native chain features
 - Siloed ecosystems
 
-**Polkadot Hub Solution on Asset Hub:**
+**Polkadot Solidity Solution on Asset Hub:**
 
 - Deploy to Asset Hub system parachain
 - Inherit Polkadot's shared security
@@ -196,7 +194,7 @@ sequenceDiagram
 
 ```mermaid
 graph LR
-    DEV[Your dApp] -->|Deploy| HUB[Polkadot Hub<br/>on Asset Hub]
+    DEV[Your dApp] -->|Deploy| HUB[Polkadot Solidity<br/>on Asset Hub]
     HUB -->|Secured by| RELAY[Polkadot<br/>Relay Chain]
     HUB -->|Access| RUNTIME[Native Asset Hub<br/>Runtime]
     HUB -->|XCM to| PARAS[All Parachains]
@@ -219,7 +217,7 @@ graph LR
 - No native cross-chain capabilities
 - Expensive infrastructure for custom chains
 
-**Polkadot Hub Advantage:**
+**Polkadot Solidity Advantage:**
 
 - Zero infrastructure costs
 - No parachain slot needed
@@ -259,7 +257,7 @@ graph TB
         T1 --> T2 --> T3 --> T4
     end
 
-    subgraph HUB[Polkadot Hub Approach]
+    subgraph HUB[Polkadot Solidity Approach]
         H1[Write Smart Contract<br/>💻 Solidity]
         H2[Deploy to Asset Hub<br/>🚀 Simple]
         H3[Launch dApp<br/>✨ Done]
@@ -283,7 +281,7 @@ graph TB
 - Pure Substrate: Steep learning curve, limited tooling
 - Bridges: Trust assumptions, delays, risks
 
-**Polkadot Hub's Hybrid Solution:**
+**Polkadot Solidity's Hybrid Solution:**
 
 ```mermaid
 graph TB
@@ -292,7 +290,7 @@ graph TB
         LOGIC[Business Logic]
     end
 
-    subgraph HUB[Polkadot Hub on Asset Hub]
+    subgraph HUB[Polkadot Solidity on Asset Hub]
         EVM[EVM Smart Contracts<br/>Solidity + Hardhat]
         PRECOMPILES[Precompiles]
         RUNTIME[Asset Hub<br/>Native Runtime]
@@ -358,7 +356,7 @@ graph TB
 - No learning curve for existing devs
 - Immediate productivity
 
-**Polkadot Hub's Developer Experience:**
+**Polkadot Solidity's Developer Experience:**
 
 ### Familiar Tools, Just Work
 
@@ -418,8 +416,6 @@ contract CrossChainToken is ERC20 {
 - Polkadot.js for substrate interactions
 - Chopsticks for forking and testing
 - XCM Simulator for cross-chain testing
-
-![Developer Experience](https://via.placeholder.com/800x400/0D0D0D/E6007A?text=Ethereum+Tools+on+Polkadot)
 
 ---
 
@@ -566,8 +562,6 @@ graph LR
 - Community engagement
 - Past track record helps
 
-![Funding Options](https://via.placeholder.com/800x400/0D0D0D/552BBF?text=Funding+Opportunities)
-
 ---
 
 ## 🚀 Parachain Programs
@@ -658,8 +652,6 @@ graph LR
 3. Propose integrations
 4. Co-marketing opportunities
 5. Shared developer resources
-
-![Parachain Ecosystem](https://via.placeholder.com/800x400/0D0D0D/00B2FF?text=Parachain+Network)
 
 ---
 
@@ -753,8 +745,6 @@ api.query.system.events((events) => {
 - Smart contract calls
 - Cross-chain messages
 - Token transfers
-
-![Analytics](https://via.placeholder.com/800x400/0D0D0D/E6007A?text=Track+Growth)
 
 ---
 
@@ -856,8 +846,6 @@ api.query.system.events((events) => {
 - Join discussions
 - Help other projects
 - Contribute to ecosystem
-
-![Community Building](https://via.placeholder.com/800x400/0D0D0D/552BBF?text=Build+Community)
 
 ---
 
@@ -980,8 +968,6 @@ api.query.system.events((events) => {
 - Media coverage
 - Community recognition
 
-![Events](https://via.placeholder.com/800x400/0D0D0D/00B2FF?text=Ecosystem+Events)
-
 ---
 
 ## 📱 Communication Channels
@@ -1095,8 +1081,6 @@ Built on Polkadot to leverage [specific benefits]."
 Unlike single-chain DEXes, we aggregate liquidity from the entire Polkadot ecosystem.
 
 Built on Polkadot to leverage XCM for trustless cross-chain swaps."
-
-![Project Positioning](https://via.placeholder.com/800x400/0D0D0D/E6007A?text=Your+Unique+Value)
 
 ---
 
@@ -1228,8 +1212,6 @@ Clear deadline
 3. Joint marketing campaign
 4. Community engagement
 5. Track metrics
-
-![Integrations](https://via.placeholder.com/800x400/0D0D0D/552BBF?text=Build+Connections)
 
 ---
 
@@ -1363,8 +1345,6 @@ let result = a + b; // Can overflow!
 - Token allocation
 - Remote-first culture
 - Meaningful work
-
-![Long-term Growth](https://via.placeholder.com/800x400/0D0D0D/00B2FF?text=Sustainable+Growth)
 
 ---
 
@@ -1606,5 +1586,3 @@ A: Start with crypto-native communities. Engage authentically. Solve real proble
 **Build in public. Engage authentically. Grow together.**
 
 ### See You Next Workshop!
-
-![Build Together](https://via.placeholder.com/800x400/0D0D0D/E6007A?text=Keep+Building)

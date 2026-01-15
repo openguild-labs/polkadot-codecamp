@@ -12,14 +12,14 @@ export interface Workshop {
 export const workshops: Workshop[] = [
   {
     id: "1",
-    title: "Introduction to Polkadot Hub",
+    title: "Introduction to Polkadot Solidity",
     description:
-      "Walk through the hackathon information and process that hackers need to follow. Reference Polkadot Builder Playbook. General introduction to Polkadot Hub: developer ecosystem and guidance.",
+      "Walk through the hackathon information and process that hackers need to follow. Reference Polkadot Builder Playbook. General introduction to Polkadot Solidity: developer ecosystem and guidance.",
     pic: "Tin",
     deliverables: "Understanding of Polkadot ecosystem and hackathon process",
-    slug: "introduction-to-polkadot-hub",
+    slug: "introduction-to-polkadot-solidity",
     videoUrl: "https://www.youtube.com/embed/PqzUtLp2Oxc?si=3rE7C_R2cKQbCM0L",
-    slidePath: "/slides/introduction-to-polkadot-hub.md",
+    slidePath: "/slides/introduction-to-polkadot-solidity.md",
   },
   {
     id: "2",

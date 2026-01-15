@@ -32,35 +32,37 @@ export const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="bg-black text-white py-20 relative overflow-hidden">
-      {/* Decorative Polkadot Logo */}
-      <div className="absolute right-8 top-8 w-20 h-24 opacity-20">
+    <footer className="bg-black text-white py-16 relative overflow-hidden">
+      {/* Decorative Logo */}
+      <div className="absolute right-8 top-8 w-16 h-20 opacity-20">
         <Image
           src="/graphics/Dotted Logo.png"
           alt=""
           fill
           className="object-contain"
+          style={{ filter: "hue-rotate(140deg) saturate(1.5)" }}
         />
       </div>
 
       <Container className="relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
-          {/* Brand - Left Side */}
+          {/* Brand */}
           <div className="md:col-span-5">
             {/* Logo */}
-            <div className="flex items-center gap-3 mb-8">
-              <div className="flex items-center gap-1">
-                <div className="w-4 h-4 bg-blueviolet" />
-                <div className="w-4 h-4 bg-crimson" />
-                <div className="w-4 h-4 bg-blueviolet" />
+            <div className="flex items-center gap-3 mb-6">
+              <div className="flex items-center gap-0.5">
+                <div className="w-3 h-3 bg-cyan" />
+                <div className="w-3 h-3 bg-white" />
+                <div className="w-3 h-3 bg-cyan" />
               </div>
-              <span className="font-title text-2xl tracking-wider text-white">
+              <span className="font-title text-xl tracking-wider text-white">
                 CODECAMP
               </span>
             </div>
 
-            <p className="font-body mb-8 max-w-md leading-relaxed text-lg text-white/70">
-              Learn about the Polkadot Hub and build your first project on it.
+            <p className="font-body mb-8 max-w-md leading-relaxed text-gray-400">
+              A 4-week online hackathon designed to discover and accelerate the
+              most promising Web3 builders on Polkadot.
             </p>
 
             {/* Social Links */}
@@ -71,10 +73,10 @@ export const Footer: React.FC = () => {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 flex items-center justify-center transition-all duration-200 hover:scale-105 bg-white/10 hover:bg-crimson"
+                  className="w-10 h-10 flex items-center justify-center transition-all duration-200 bg-gray-800 hover:bg-cyan"
                   aria-label={social.label}
                 >
-                  <social.icon size={20} className="text-white" />
+                  <social.icon size={18} className="text-white" />
                 </a>
               ))}
             </div>
@@ -85,17 +87,17 @@ export const Footer: React.FC = () => {
 
           {/* Resources */}
           <div className="md:col-span-2">
-            <h4 className="font-title text-sm uppercase tracking-widest mb-6 text-crimson">
+            <h4 className="font-title text-sm uppercase tracking-widest mb-6 text-cyan">
               Resources
             </h4>
-            <ul className="font-body space-y-4">
+            <ul className="font-body space-y-3">
               {resourceLinks.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="transition-colors duration-200 text-base text-white/70 hover:text-crimson"
+                    className="transition-colors duration-200 text-sm text-gray-400 hover:text-cyan"
                   >
                     {link.label}
                   </a>
@@ -106,14 +108,14 @@ export const Footer: React.FC = () => {
 
           {/* Quick Links */}
           <div className="md:col-span-3">
-            <h4 className="font-title text-sm uppercase tracking-widest mb-6 text-crimson">
+            <h4 className="font-title text-sm uppercase tracking-widest mb-6 text-cyan">
               Quick Links
             </h4>
-            <ul className="font-body space-y-4">
+            <ul className="font-body space-y-3">
               <li>
                 <a
                   href="#workshops"
-                  className="transition-colors duration-200 text-base text-white/70 hover:text-crimson"
+                  className="transition-colors duration-200 text-sm text-gray-400 hover:text-cyan"
                 >
                   Workshops
                 </a>
@@ -121,7 +123,7 @@ export const Footer: React.FC = () => {
               <li>
                 <a
                   href="#challenges"
-                  className="transition-colors duration-200 text-base text-white/70 hover:text-crimson"
+                  className="transition-colors duration-200 text-sm text-gray-400 hover:text-cyan"
                 >
                   Challenges
                 </a>
@@ -129,7 +131,7 @@ export const Footer: React.FC = () => {
               <li>
                 <a
                   href="#faq"
-                  className="transition-colors duration-200 text-base text-white/70 hover:text-crimson"
+                  className="transition-colors duration-200 text-sm text-gray-400 hover:text-cyan"
                 >
                   FAQ
                 </a>
@@ -139,19 +141,19 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Divider */}
-        <div className="mt-16 pt-8 border-t border-white/10">
+        <div className="mt-12 pt-8 border-t border-gray-800">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="font-body text-white/40 text-sm">
+            <p className="font-body text-gray-500 text-sm">
               &copy; {new Date().getFullYear()} Polkadot CodeCamp. All rights
               reserved.
             </p>
-            <p className="font-body text-white/40 text-sm">
-              Made with <span className="text-crimson">♥</span> by{" "}
+            <p className="font-body text-gray-500 text-sm">
+              Made with <span className="text-cyan">♥</span> by{" "}
               <a
                 href="https://openguild.wtf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white/60 hover:text-crimson transition-colors"
+                className="text-gray-400 hover:text-cyan transition-colors"
               >
                 OpenGuild
               </a>

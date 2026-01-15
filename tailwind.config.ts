@@ -9,17 +9,22 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Brand Primary Colors
+        // Primary Brand Colors
+        cyan: {
+          DEFAULT: "#00BCD4",
+          light: "#4DD0E1",
+          dark: "#0097A7",
+        },
+        // Legacy colors for compatibility
         crimson: "#FF195F",
         blueviolet: "#5816CF",
-        // Brand Secondary Colors
         water: "#EDF4FE",
         platinum: "#E2E2E2",
-        // Legacy polkadot colors (keeping for compatibility)
+        // Polkadot colors
         polkadot: {
-          pink: "#FF195F",
-          purple: "#5816CF",
-          cyan: "#00B2FF",
+          pink: "#E6007A",
+          purple: "#552BBF",
+          cyan: "#00BCD4",
           dark: "#0D0D0D",
           darker: "#000000",
           gray: {
@@ -51,9 +56,9 @@ const config: Config = {
       },
       animation: {
         blink: "blink 1s step-end infinite",
-        "fade-in": "fadeIn 0.5s ease-out forwards",
-        "slide-up": "slideUp 0.5s ease-out forwards",
-        "pulse-glow": "pulseGlow 2s ease-in-out infinite",
+        "fade-in": "fadeIn 0.6s ease-out forwards",
+        "slide-up": "slideUp 0.6s ease-out forwards",
+        float: "float 3s ease-in-out infinite",
       },
       keyframes: {
         blink: {
@@ -61,16 +66,16 @@ const config: Config = {
           "50%": { opacity: "0" },
         },
         fadeIn: {
-          "0%": { opacity: "0" },
-          "100%": { opacity: "1" },
-        },
-        slideUp: {
           "0%": { opacity: "0", transform: "translateY(20px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
-        pulseGlow: {
-          "0%, 100%": { boxShadow: "0 0 20px rgba(255, 25, 95, 0.3)" },
-          "50%": { boxShadow: "0 0 40px rgba(255, 25, 95, 0.6)" },
+        slideUp: {
+          "0%": { opacity: "0", transform: "translateY(30px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        float: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-10px)" },
         },
       },
     },

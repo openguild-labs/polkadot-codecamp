@@ -4,71 +4,58 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Section, Button } from "@/components/ui";
 import { challenges } from "@/data";
-import { Code, User, CheckCircle, ExternalLink, Github } from "lucide-react";
+import { Code, Github, ExternalLink } from "lucide-react";
 
 export const Challenges: React.FC = () => {
   const difficultyStyles: Record<string, { bg: string; text: string }> = {
     Beginner: {
-      bg: "#22c55e",
-      text: "#ffffff",
+      bg: "#00D4AA",
+      text: "#000000",
     },
     Intermediate: {
-      bg: "#eab308",
-      text: "#000000",
+      bg: "#000000",
+      text: "#FFFFFF",
     },
     Advanced: {
       bg: "#FF195F",
-      text: "#ffffff",
+      text: "#FFFFFF",
     },
   };
 
   return (
-    <Section id="challenges" className="relative py-24">
+    <Section id="challenges" className="bg-white relative py-24">
       {/* Section Header */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="mb-16 text-center"
+        className="mb-16"
       >
-        <span
-          className="font-title text-sm tracking-widest uppercase mb-4 block"
-          style={{ color: "#FF195F" }}
-        >
+        <span className="font-title text-sm tracking-widest uppercase mb-4 block text-cyan">
           Hands-On Practice
         </span>
-        <div className="flex items-center justify-center gap-4 mb-6">
-          <h2
-            className="font-title text-4xl md:text-5xl lg:text-6xl uppercase leading-none"
-            style={{ color: "#5816CF" }}
-          >
+        <div className="flex items-center gap-4 mb-6">
+          <h2 className="font-title text-4xl md:text-5xl lg:text-6xl uppercase leading-none text-black">
             Coding Challenges
           </h2>
-          <span
-            className="inline-block w-3 h-10 animate-blink"
-            style={{ backgroundColor: "#FF195F" }}
-          />
+          <span className="inline-block w-3 h-10 bg-cyan animate-blink" />
         </div>
         <motion.div
           initial={{ width: 0 }}
-          whileInView={{ width: "160px" }}
+          whileInView={{ width: "120px" }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="h-1.5 mx-auto mb-8"
-          style={{ backgroundColor: "#FF195F" }}
+          className="h-1 bg-cyan mb-8"
         />
-        <p
-          className="font-body text-lg max-w-2xl mx-auto leading-relaxed"
-          style={{ color: "rgba(0,0,0,0.6)" }}
-        >
+        <p className="font-body text-lg max-w-2xl leading-relaxed text-gray-600">
           Put your skills to the test with hands-on coding challenges. Build
           real-world applications and deploy them on Polkadot.
         </p>
       </motion.div>
 
-      {/* Challenges Grid - 2 columns */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+      {/* Challenges Grid */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {challenges.map((challenge, index) => {
           const difficulty =
             difficultyStyles[challenge.difficulty] || difficultyStyles.Beginner;
@@ -80,20 +67,14 @@ export const Challenges: React.FC = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <div
-                className="bg-white border-2 border-black p-8 h-full flex flex-col"
-                style={{ boxShadow: "4px 4px 0 #000000" }}
-              >
+              <div className="bg-white border border-gray-200 p-8 h-full flex flex-col hover:border-cyan hover:shadow-lg transition-all duration-300">
                 {/* Header */}
                 <div className="flex items-start justify-between mb-6">
-                  <div
-                    className="p-4"
-                    style={{ backgroundColor: "rgba(255, 25, 95, 0.1)" }}
-                  >
-                    <Code className="w-8 h-8" style={{ color: "#FF195F" }} />
+                  <div className="p-3 bg-gray-100">
+                    <Code className="w-6 h-6 text-black" />
                   </div>
                   <span
-                    className="font-title text-xs px-4 py-2 uppercase tracking-wider"
+                    className="font-title text-xs px-3 py-1.5 uppercase tracking-wider"
                     style={{
                       backgroundColor: difficulty.bg,
                       color: difficulty.text,
@@ -104,55 +85,27 @@ export const Challenges: React.FC = () => {
                 </div>
 
                 {/* Title */}
-                <h3
-                  className="font-title text-xl md:text-2xl uppercase leading-tight mb-4"
-                  style={{ color: "#000000" }}
-                >
+                <h3 className="font-title text-lg md:text-xl uppercase leading-tight mb-4 text-black">
                   {challenge.title}
                 </h3>
 
                 {/* Description */}
-                <p
-                  className="font-body text-base mb-6 leading-relaxed flex-grow"
-                  style={{ color: "rgba(0,0,0,0.6)" }}
-                >
+                <p className="font-body text-sm mb-6 leading-relaxed flex-grow text-gray-600">
                   {challenge.description}
                 </p>
 
                 {/* Meta */}
-                <div
-                  className="pt-6"
-                  style={{ borderTop: "2px dashed #E2E2E2" }}
-                >
-                  {/* PIC */}
-                  <div className="flex items-center gap-2 mb-4">
-                    <User className="w-4 h-4" style={{ color: "#5816CF" }} />
-                    <span
-                      className="font-title text-xs tracking-wide uppercase"
-                      style={{ color: "rgba(0,0,0,0.5)" }}
-                    >
-                      PIC: {challenge.pic}
-                    </span>
-                  </div>
-
+                <div className="pt-6 border-t border-gray-200">
                   {/* Deliverables */}
-                  <div className="flex items-start gap-2 mb-6">
-                    <CheckCircle
-                      className="w-4 h-4 mt-1 flex-shrink-0"
-                      style={{ color: "#5816CF" }}
-                    />
-                    <span
-                      className="font-body text-sm"
-                      style={{ color: "rgba(0,0,0,0.6)" }}
-                    >
-                      {challenge.deliverables}
-                    </span>
-                  </div>
+                  <p className="font-body text-sm text-gray-500 mb-4">
+                    <span className="font-medium text-black">Deliverables:</span>{" "}
+                    {challenge.deliverables}
+                  </p>
 
                   {/* GitHub Button */}
                   <Button
                     variant="outline"
-                    size="md"
+                    size="sm"
                     href={challenge.githubUrl}
                     className="w-full"
                   >

@@ -2,137 +2,175 @@
 
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Calendar } from "lucide-react";
 
 export const Hero: React.FC = () => {
   return (
-    <section className="min-h-screen relative overflow-hidden pt-20 pb-16">
-      {/* World Map Background */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[60%] h-[80%]">
-          <Image
-            src="/graphics/World Map.png"
-            alt="Dotted World Map"
-            fill
-            className="object-contain object-right opacity-90"
-            priority
-          />
-        </div>
-      </div>
-
-      {/* Polkadot Dotted Logo - Top Left */}
-      <div className="absolute left-4 top-24 md:left-8 lg:left-16 md:top-28 w-24 h-32 md:w-32 md:h-40">
+    <section className="min-h-screen relative overflow-hidden pt-24 pb-16 bg-white">
+      {/* Dotted Logo - Top Left */}
+      <motion.div
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        className="absolute left-6 top-28 md:left-12 lg:left-20 md:top-32 w-28 h-36 md:w-40 md:h-48"
+      >
         <Image
-          src="/graphics/Dotted Logo.png"
+          src="/logo.png"
           alt="Polkadot Logo"
           fill
           className="object-contain"
           priority
         />
-      </div>
+      </motion.div>
 
       {/* Main Content Container */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 md:pt-24 relative z-10">
-        <div className="flex">
-          {/* Main Content */}
-          <div className="flex-1 lg:pl-8">
-            {/* Badge */}
-            <div className="inline-block mb-6">
-              <span
-                className="text-xs md:text-sm tracking-widest px-4 py-2 text-white uppercase font-medium font-title"
-                style={{ backgroundColor: "#5816CF" }}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 md:pt-28 relative z-10">
+        <div className="max-w-3xl">
+          {/* Badge */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="mb-6"
+          >
+            <span className="inline-block font-title text-xs md:text-sm tracking-widest px-4 py-2 bg-black text-white uppercase">
+              Polkadot Solidity
+            </span>
+          </motion.div>
+
+          {/* Main Title */}
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="font-title text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[0.95] mb-4 tracking-tight text-black"
+          >
+            CODECAMP
+            <br />
+            2026
+          </motion.h1>
+
+          {/* Accent Bar */}
+          <motion.div
+            initial={{ width: 0 }}
+            animate={{ width: "100%" }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="h-1 bg-cyan max-w-md mb-6"
+          />
+
+          {/* Tagline with blinking cursor */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="flex items-center gap-2 mb-6"
+          >
+            <span className="font-title text-sm md:text-base text-black tracking-widest uppercase">
+              BUILD ONCE. SCALE EVERYWHERE
+            </span>
+            <span className="inline-block w-2 h-5 bg-cyan animate-blink" />
+          </motion.div>
+
+          {/* Dates */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            className="mb-6"
+          >
+            <span className="font-body text-xl md:text-2xl text-black font-medium">
+              Feb 15, 2026 - Mar 24, 2026
+            </span>
+          </motion.div>
+
+          {/* Description */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            className="font-body text-base md:text-lg mb-10 max-w-lg leading-relaxed text-gray-600"
+          >
+            A 4-week online hackathon designed to discover and accelerate the
+            most promising Web3 builders on Polkadot
+          </motion.p>
+
+          {/* CTAs */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.7 }}
+            className="flex flex-col sm:flex-row gap-4 mb-12"
+          >
+            <Button variant="primary" size="lg" href="#workshops">
+              Start Learning
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </Button>
+            <Button variant="secondary" size="lg" href="#challenges">
+              <Calendar className="mr-2 w-5 h-5" />
+              Explore Challenges
+            </Button>
+          </motion.div>
+
+          {/* Made possible by */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.8 }}
+            className="flex flex-wrap items-center gap-4 md:gap-6"
+          >
+            <span className="font-body text-sm text-gray-500">
+              Made possible by
+            </span>
+            <div className="flex items-center gap-4 md:gap-6">
+              <a
+                href="https://openguild.wtf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:opacity-70 transition-opacity"
               >
-                Polkadot Hub
-              </span>
+                <Image
+                  src="/graphics/organizer-openguild.png"
+                  alt="OpenGuild"
+                  width={100}
+                  height={32}
+                  className="h-6 md:h-8 w-auto object-contain"
+                />
+              </a>
+              <span className="text-gray-400 font-body">×</span>
+              <a
+                href="https://web3.foundation"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:opacity-70 transition-opacity"
+              >
+                <Image
+                  src="/graphics/organizer-web3foundation.png"
+                  alt="Web3 Foundation"
+                  width={120}
+                  height={32}
+                  className="h-6 md:h-8 w-auto object-contain"
+                />
+              </a>
+              <span className="text-gray-400 font-body">×</span>
+              <a
+                href="https://polkadot.network"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:opacity-70 transition-opacity"
+              >
+                <Image
+                  src="/graphics/organizer-polkadot.png"
+                  alt="Polkadot"
+                  width={120}
+                  height={32}
+                  className="h-6 md:h-8 w-auto object-contain"
+                />
+              </a>
             </div>
-
-            {/* Main Title */}
-            <h1
-              className="font-title text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black leading-[0.9] mb-6 tracking-tight"
-              style={{ color: "#5816CF" }}
-            >
-              CODECAMP
-              <br />
-              2026
-            </h1>
-
-            {/* Tagline with blinking cursor */}
-            <div className="flex items-center gap-2 mb-2">
-              <span className="font-title text-base md:text-lg text-black tracking-widest uppercase font-medium">
-                BUILD ONCE. SCALE EVERYWHERE
-              </span>
-              <span
-                className="inline-block w-2 h-5 animate-blink"
-                style={{ backgroundColor: "#FF195F" }}
-              />
-            </div>
-
-            {/* Accent bar */}
-            <div
-              className="h-1.5 w-48 md:w-64 mb-8"
-              style={{ backgroundColor: "#5816CF" }}
-            />
-
-            {/* Description */}
-            <p
-              className="font-body text-base md:text-lg mb-8 max-w-lg leading-relaxed"
-              style={{
-                color: "rgba(0,0,0,0.7)",
-              }}
-            >
-              Learn about the Polkadot Hub and build your first project on it.
-            </p>
-
-            {/* Light blue progress bar */}
-            <div
-              className="h-2 w-full max-w-md mb-8"
-              style={{ backgroundColor: "#EDF4FE" }}
-            />
-
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-4 mb-10">
-              <Button variant="primary" size="lg" href="#workshops">
-                Explore
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-              <Button variant="secondary" size="lg" href="#challenges">
-                View Challenges
-              </Button>
-            </div>
-
-            {/* Made possible by */}
-            <p
-              className="font-body text-sm"
-              style={{
-                color: "rgba(0,0,0,0.5)",
-              }}
-            >
-              Made possible by{" "}
-              <span className="font-semibold" style={{ color: "#000000" }}>
-                OpenGuild
-              </span>{" "}
-              |{" "}
-              <span className="font-semibold" style={{ color: "#000000" }}>
-                Web3 Foundation
-              </span>{" "}
-              |{" "}
-              <span className="font-semibold" style={{ color: "#000000" }}>
-                Polkadot
-              </span>
-            </p>
-          </div>
+          </motion.div>
         </div>
-      </div>
-
-      {/* Decorative Dot Coin */}
-      <div className="absolute right-8 bottom-8 w-16 h-16 md:w-24 md:h-24 opacity-60">
-        <Image
-          src="/graphics/Dotted Dot Coin.png"
-          alt="Polkadot Coin"
-          fill
-          className="object-contain"
-        />
       </div>
     </section>
   );

@@ -20,7 +20,7 @@ Let's dive into what makes Polkadot unique and how you can build on these streng
 
 ## Narrative One: EVM Meets Substrate (0:45 - 2:15) [220 words]
 
-The first major narrative is EVM meets Substrate on Polkadot Hub.
+The first major narrative is EVM meets Substrate on Polkadot Solidity.
 
 The vision is simple but powerful. Ethereum compatibility comes to Polkadot Asset Hub, bringing EVM flexibility together with Substrate's native power. This is the best of both worlds with lower barriers to entry for Ethereum developers.
 
@@ -28,7 +28,7 @@ Why does this matter? First, it onboards millions of Solidity developers who can
 
 Your opportunity here is massive. Build hybrid EVM-Substrate applications that combine the strengths of both ecosystems. Port existing Ethereum dApps to Polkadot with minimal changes. Create cross-chain DeFi using XCM precompiles that can communicate with any parachain. Leverage Asset Hub's native asset management from your smart contracts.
 
-Polkadot Hub runs on Asset Hub, a system parachain secured by the Polkadot relay chain. It provides one hundred percent EVM compatibility via REVM, native Asset Hub runtime access through precompiles, XCM precompiles for cross-chain calls, and advanced precompiles for privacy and account abstraction.
+Polkadot Solidity runs on Asset Hub, a system parachain secured by the Polkadot relay chain. It provides one hundred percent EVM compatibility via REVM, native Asset Hub runtime access through precompiles, XCM precompiles for cross-chain calls, and advanced precompiles for privacy and account abstraction.
 
 This narrative is about removing barriers while adding superpowers.
 
@@ -40,7 +40,7 @@ Narrative two focuses on true interoperability through XCM.
 
 Polkadot enables native cross-chain communication without bridges. This means seamless parachain-to-parachain messaging, trustless cross-chain asset transfers, remote execution capabilities, and zero third-party bridge risks.
 
-XCM stands for Cross-Consensus Messaging. Here's how it works. Your smart contract on Polkadot Hub calls an XCM precompile. The precompile sends an XCM message to the relay chain. The relay chain routes the message to the target parachain. The parachain executes the action and sends confirmation back. Your contract receives the delivery receipt. All of this happens natively without any bridges or wrapped tokens.
+XCM stands for Cross-Consensus Messaging. Here's how it works. Your smart contract on Polkadot Solidity calls an XCM precompile. The precompile sends an XCM message to the relay chain. The relay chain routes the message to the target parachain. The parachain executes the action and sends confirmation back. Your contract receives the delivery receipt. All of this happens natively without any bridges or wrapped tokens.
 
 The opportunities for builders are enormous. In cross-chain DeFi, build DEX aggregators across parachains, multi-chain yield optimizers, cross-chain lending protocols, and unified liquidity pools. For cross-chain applications, create NFT marketplaces spanning parachains, gaming economies with multi-chain assets, DAO treasuries across multiple chains, and payment gateways accepting any parachain token.
 
@@ -56,7 +56,7 @@ Narrative three is about security through Asset Hub deployment.
 
 Traditional smart contract platforms have problems. Security depends on individual chains. Bridge risks arise when going cross-chain. There's limited access to native chain features. Ecosystems remain siloed.
 
-Polkadot Hub's solution is deployment on Asset Hub, a system parachain. Your contracts are secured by the Polkadot relay chain with no separate validator set needed. You access the native Asset Hub runtime and get native XCM for true interoperability.
+Polkadot Solidity's solution is deployment on Asset Hub, a system parachain. Your contracts are secured by the Polkadot relay chain with no separate validator set needed. You access the native Asset Hub runtime and get native XCM for true interoperability.
 
 The benefits are clear. System parachain security means your contracts are secured by Polkadot's relay chain with a battle-tested security model. You focus resources on your application, not infrastructure. Immediate ecosystem access gives you XCM to all parachains from day one, Asset Hub's native asset management, Polkadot's established user base, and cross-chain liquidity access. Hybrid capabilities mean you write EVM smart contracts in Solidity while calling native runtime functions, getting the best of both worlds, and future-proofing with PolkaVM support.
 
@@ -70,11 +70,11 @@ Narrative four addresses the infrastructure burden.
 
 Traditional smart contract platforms lock you into one chain with limited features and no native cross-chain capabilities. Custom chains require expensive infrastructure.
 
-Polkadot Hub offers zero infrastructure costs. No parachain slot needed. No validator set to maintain. Just deploy your contract and go.
+Polkadot Solidity offers zero infrastructure costs. No parachain slot needed. No validator set to maintain. Just deploy your contract and go.
 
 For cost-effective deployment, you pay only gas in DOT with no slot auction costs and no ongoing infrastructure expenses. Focus your budget on development, not operations. For maximum capabilities, you get EVM compatibility through REVM, native runtime access via precompiles, XCM cross-chain calls, and advanced precompiles for privacy and account abstraction. You have revenue model freedom - design your own tokenomics, charge transaction fees, offer subscription models, with no forced token inflation.
 
-Compare the traditional approach: get a parachain slot costing thousands, build complex infrastructure, maintain validators with ongoing costs, then finally launch your dApp. The Polkadot Hub approach: write your smart contract in Solidity, deploy to Asset Hub simply, and your dApp is live. Done.
+Compare the traditional approach: get a parachain slot costing thousands, build complex infrastructure, maintain validators with ongoing costs, then finally launch your dApp. The Polkadot Solidity approach: write your smart contract in Solidity, deploy to Asset Hub simply, and your dApp is live. Done.
 
 Maximum capabilities with minimum overhead.
 
@@ -86,7 +86,7 @@ Narrative five is about hybrid EVM-Substrate architecture.
 
 The monolithic problem: pure EVM limits you to Solidity with no native features. Pure Substrate has a steep learning curve and limited tooling. Bridges introduce trust assumptions, delays, and risks.
 
-Polkadot Hub provides a hybrid solution. Write smart contract logic in Solidity using familiar tools. Call native Asset Hub functions via precompiles for efficient operations. Access XCM for cross-chain operations. Use Asset Hub's battle-tested features directly.
+Polkadot Solidity provides a hybrid solution. Write smart contract logic in Solidity using familiar tools. Call native Asset Hub functions via precompiles for efficient operations. Access XCM for cross-chain operations. Use Asset Hub's battle-tested features directly.
 
 Example use cases demonstrate the power. A hybrid DeFi protocol uses EVM for custom trading logic, the runtime for efficient asset creation, and precompiles for cross-chain swaps via XCM. An advanced NFT platform uses EVM for marketplace logic and royalties, the runtime for Asset Hub's NFT pallet, and precompiles for multi-chain NFT transfers. A DAO with multi-chain treasury uses EVM for governance and voting logic, the runtime for asset management, and precompiles for XCM to parachain treasuries.
 
@@ -106,7 +106,7 @@ All your favorite tools work. MetaMask for wallet connection and transaction sig
 
 Plus you get Polkadot-specific tools like Polkadot.js for substrate interactions, Chopsticks for forking and testing, and XCM Simulator for cross-chain testing.
 
-If you know Ethereum development, you can build on Polkadot Hub today. Zero friction, maximum capability.
+If you know Ethereum development, you can build on Polkadot Solidity today. Zero friction, maximum capability.
 
 ---
 
@@ -150,7 +150,7 @@ Discord is the most active community with real-time help, technical discussions,
 
 Educational resources include Polkadot Education Hub at learn dot openguild dot wtf with free courses, video tutorials, hands-on workshops, and learning paths. Official documentation covers Substrate docs, Polkadot Wiki, API documentation, and best practices guides.
 
-For development tools, use Polkadot.js for JavaScript API and browser extension. Substrate provides the blockchain framework with modular pallets and testing tools. Smart contract platforms include ink! for WASM contracts and Solidity on Polkadot Hub.
+For development tools, use Polkadot.js for JavaScript API and browser extension. Substrate provides the blockchain framework with modular pallets and testing tools. Smart contract platforms include ink! for WASM contracts and Solidity on Polkadot Solidity.
 
 Key events include Polkadot Decoded as the annual flagship event, Sub0 developer conference, regular hackathons with prizes and grants, and local meetups for networking.
 
@@ -166,7 +166,7 @@ What problem do you solve? Be specific about real user pain with measurable impa
 
 Craft your narrative using this template: Project Name is a category that helps target users to solve problem by unique approach. Unlike alternatives, we key differentiator. Built on Polkadot to leverage specific benefits.
 
-Example: FlowDEX is a cross-chain DEX aggregator that helps DeFi traders get the best prices across all Polkadot parachains by routing orders through optimal paths. Unlike single-chain DEXes, we aggregate liquidity from the entire Polkadot ecosystem. Built on Polkadot Hub to leverage XCM for trustless cross-chain swaps.
+Example: FlowDEX is a cross-chain DEX aggregator that helps DeFi traders get the best prices across all Polkadot parachains by routing orders through optimal paths. Unlike single-chain DEXes, we aggregate liquidity from the entire Polkadot ecosystem. Built on Polkadot Solidity to leverage XCM for trustless cross-chain swaps.
 
 Measure success through product metrics like daily active users and transaction volume. Track community metrics like Discord members and Twitter followers. Monitor development metrics like code commits and test coverage. Follow business metrics like partnerships signed and grants received.
 

@@ -9,15 +9,29 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Polkadot Hub CodeCamp | Build Once. Scale Everywhere.",
+  title: "Polkadot Solidity CodeCamp | Build Once. Scale Everywhere.",
   description:
-    "A 4-week online hackathon designed to discover and accelerate the most promising Web3 builders on Polkadot Hub",
-  keywords: ["Polkadot", "Hackathon", "CodeCamp", "Blockchain", "Web3", "Hub", "2026"],
+    "A 4-week online hackathon designed to discover and accelerate the most promising Web3 builders on Polkadot",
+  keywords: [
+    "Polkadot",
+    "Hackathon",
+    "CodeCamp",
+    "Blockchain",
+    "Web3",
+    "Solidity",
+    "2026",
+  ],
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
   openGraph: {
-    title: "Polkadot Hub CodeCamp 2026",
+    title: "Polkadot Solidity CodeCamp 2026",
     description:
-      "A 4-week online hackathon designed to discover and accelerate the most promising Web3 builders on Polkadot Hub",
+      "A 4-week online hackathon designed to discover and accelerate the most promising Web3 builders on Polkadot",
     type: "website",
+    images: ["/logo.png"],
   },
 };
 
@@ -28,7 +42,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={spaceGrotesk.variable}>
-      <body className="font-sans antialiased overflow-x-hidden">{children}</body>
+      <body className="font-sans antialiased overflow-x-hidden">
+        {children}
+      </body>
     </html>
   );
 }

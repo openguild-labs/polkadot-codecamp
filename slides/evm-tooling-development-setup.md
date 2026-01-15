@@ -55,11 +55,11 @@ graph LR
     style SC fill:#552BBF,stroke:#fff,color:#fff
 ```
 
-**Polkadot Hub Dual VM:**
+**Polkadot Solidity Dual VM:**
 
 ```mermaid
 graph TB
-    subgraph HUB[Polkadot Hub on Asset Hub]
+    subgraph HUB[Polkadot Solidity on Asset Hub]
         PALLET[pallet-revive<br/>Shared Infrastructure]
         REVM[REVM<br/>EVM Compatible]
         POLKAVM[PolkaVM<br/>RISC-V]
@@ -78,12 +78,12 @@ graph TB
     style RELAY fill:#E6007A,stroke:#fff,color:#fff
 ```
 
-### Polkadot Hub's Dual VM Strategy
+### Polkadot Solidity's Dual VM Strategy
 
 **REVM (Primary - Production Ready):**
 ✅ 100% EVM-compatible Rust implementation
 ✅ Powers Foundry and Reth (battle-tested)
-✅ Launch: December 2025 on Polkadot Hub
+✅ Launch: December 2025 on Polkadot Solidity
 ✅ All Ethereum tooling works (Hardhat, Foundry, Remix)
 ✅ Deploy Solidity contracts unchanged
 
@@ -100,11 +100,11 @@ graph TB
 
 ---
 
-## Polkadot Hub Network
+## Polkadot Solidity Network
 
 ### The Smart Contract Platform on Polkadot
 
-**What is Polkadot Hub?**
+**What is Polkadot Solidity?**
 
 - Smart contracts on Asset Hub (Polkadot's system parachain)
 - Full Ethereum compatibility via REVM
@@ -124,14 +124,14 @@ graph TB
 **Network Details:**
 
 ```
-Mainnet: Polkadot Hub (December 2025)
+Mainnet: Polkadot Solidity (December 2025)
 Testnet: Westend Hub (Available Now)
 Chain ID: TBD
 RPC: https://westend-hub.polkadot.io
 Faucet: https://faucet.polkadot.io
 ```
 
-### Why Polkadot Hub?
+### Why Polkadot Solidity?
 
 **Unique Advantages:**
 
@@ -485,7 +485,7 @@ solc_version = "0.8.20"
 
 # RPC endpoints
 [rpc_endpoints]
-# Polkadot Hub Networks
+# Polkadot Solidity Networks
 polkadot_hub_testnet = "https://westend-hub.polkadot.io"
 polkadot_hub_mainnet = "TBD"  # Coming December 2025
 
@@ -623,14 +623,14 @@ const config: HardhatUserConfig = {
       chainId: 1337,
     },
 
-    // Polkadot Hub Testnet (Westend)
+    // Polkadot Solidity Testnet (Westend)
     polkadotHubTestnet: {
       url: "https://westend-hub.polkadot.io",
       chainId: 0, // TBD
       accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
     },
 
-    // Polkadot Hub Mainnet (Coming December 2025)
+    // Polkadot Solidity Mainnet (Coming December 2025)
     polkadotHub: {
       url: "TBD",
       chainId: 0, // TBD
@@ -791,10 +791,10 @@ main()
 # Deploy to local network
 npx hardhat run scripts/deploy.ts
 
-# Deploy to Polkadot Hub Testnet
+# Deploy to Polkadot Solidity Testnet
 npx hardhat run scripts/deploy.ts --network polkadotHubTestnet
 
-# Deploy to Polkadot Hub Mainnet (when available)
+# Deploy to Polkadot Solidity Mainnet (when available)
 npx hardhat run scripts/deploy.ts --network polkadotHub
 ```
 

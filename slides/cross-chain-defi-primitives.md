@@ -31,8 +31,6 @@ By the end of this workshop, you will:
 - Explore real-world DeFi use cases
 - Deploy a working cross-chain dApp
 
-![Cross-chain DeFi](https://via.placeholder.com/800x400/0D0D0D/E6007A?text=Cross-Chain+DeFi)
-
 ---
 
 ## The Cross-chain Vision
@@ -60,7 +58,7 @@ graph TB
 
 ```mermaid
 graph TB
-    HUB[Polkadot Hub]
+    HUB[Polkadot Solidity]
 
     HUB --> ASSETS[Asset Management]
     HUB --> DEFI[DeFi Protocols]
@@ -95,8 +93,6 @@ graph TB
 ✅ Innovation acceleration
 ✅ Competitive advantage
 ✅ Sustainable growth
-
-![Interoperability Benefits](https://via.placeholder.com/800x400/0D0D0D/552BBF?text=True+Interoperability)
 
 ---
 
@@ -161,11 +157,11 @@ graph TB
     style RISK4 fill:none,stroke:none
 ```
 
-**XCM on Polkadot Hub:**
+**XCM on Polkadot Solidity:**
 
 ```mermaid
 graph TB
-    HUB[Polkadot Hub]
+    HUB[Polkadot Solidity]
     RELAY[Relay Chain<br/>Validation]
     EXT[External Systems<br/>Native Assets]
 
@@ -244,8 +240,6 @@ What to do with the message:
 - `DepositAsset`: Put into account
 - `BuyExecution`: Pay for execution
 - And 30+ more instructions
-
-![XCM Components](https://via.placeholder.com/800x400/0D0D0D/00B2FF?text=XCM+Architecture)
 
 ---
 
@@ -440,8 +434,6 @@ async function sendXCM() {
 }
 ```
 
-![XCM Implementation](https://via.placeholder.com/800x400/0D0D0D/E6007A?text=XCM+in+Code)
-
 ---
 
 ## Hyperbridge: Enhanced Cross-chain Communication
@@ -595,8 +587,6 @@ contract MyDApp is IMessageReceiver {
 }
 ```
 
-![Hyperbridge SDK](https://via.placeholder.com/800x400/0D0D0D/552BBF?text=Hyperbridge+Integration)
-
 ---
 
 ## Cross-chain DeFi Use Cases
@@ -744,8 +734,6 @@ contract YieldAggregator {
 }
 ```
 
-![DeFi Use Cases](https://via.placeholder.com/800x400/0D0D0D/00B2FF?text=Cross-Chain+DeFi)
-
 ---
 
 ## Bifrost: Liquid Staking Use Case
@@ -842,8 +830,6 @@ const transferTx = await bifrostApi.tx.xTokens
 // Now can trade, lend, or provide liquidity with vDOT
 // While still earning DOT staking rewards!
 ```
-
-![Bifrost Integration](https://via.placeholder.com/800x400/0D0D0D/E6007A?text=Bifrost+Liquid+Staking)
 
 ---
 
@@ -1033,8 +1019,6 @@ class CrossChainBridge {
   }
 }
 ```
-
-![Cross-chain DApp](https://via.placeholder.com/800x400/0D0D0D/552BBF?text=Build+Cross-Chain)
 
 ---
 
@@ -1285,8 +1269,6 @@ contract CrossChainFlashLoan {
     }
 }
 ```
-
-![Advanced Patterns](https://via.placeholder.com/800x400/0D0D0D/00B2FF?text=Advanced+Patterns)
 
 ---
 
@@ -1562,5 +1544,3 @@ Learn:
 - Success strategies
 
 **See you there!**
-
-![Thank You](https://via.placeholder.com/800x400/0D0D0D/E6007A?text=Build+Cross-Chain!)

@@ -5,98 +5,82 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { Section } from "@/components/ui";
 import { workshops } from "@/data";
-import { BookOpen, User, CheckCircle, ArrowRight } from "lucide-react";
+import { BookOpen, ArrowRight, Play } from "lucide-react";
 
 export const Workshops: React.FC = () => {
   return (
-    <Section id="workshops" className="bg-white relative py-24">
+    <Section id="workshops" className="bg-gray-50 relative py-24">
       {/* Section Header */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="mb-16 text-center"
+        className="mb-16"
       >
-        <span className="font-title text-sm tracking-widest uppercase mb-4 block text-crimson">
+        <span className="font-title text-sm tracking-widest uppercase mb-4 block text-cyan">
           Learn & Build
         </span>
-        <h2 className="font-title text-4xl md:text-5xl lg:text-6xl uppercase leading-none mb-6 text-blueviolet">
+        <h2 className="font-title text-4xl md:text-5xl lg:text-6xl uppercase leading-none mb-6 text-black">
           Workshop Topics
         </h2>
         <motion.div
           initial={{ width: 0 }}
-          whileInView={{ width: "160px" }}
+          whileInView={{ width: "120px" }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="h-1.5 mx-auto mb-8 bg-blueviolet"
+          className="h-1 bg-cyan mb-8"
         />
-        <p className="font-body text-lg max-w-2xl mx-auto leading-relaxed text-black/60">
+        <p className="font-body text-lg max-w-2xl leading-relaxed text-gray-600">
           Learn from industry experts through comprehensive workshops covering
           everything from basics to advanced topics in Polkadot development.
         </p>
       </motion.div>
 
-      {/* Workshop List - Vertical Stack */}
-      <div className="max-w-4xl mx-auto space-y-6">
+      {/* Workshop List */}
+      <div className="space-y-4">
         {workshops.map((workshop, index) => (
           <Link key={workshop.id} href={`/workshops/${workshop.slug}`}>
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="group"
             >
-              <div className="bg-white border-2 border-black p-6 md:p-8 transition-all duration-200 hover:-translate-y-1 cursor-pointer relative shadow-[4px_4px_0_#000000] hover:shadow-[6px_6px_0_#000000]">
-                <div className="flex flex-col md:flex-row md:items-start gap-6">
+              <div className="bg-white border border-gray-200 p-6 md:p-8 transition-all duration-300 hover:border-cyan hover:shadow-lg cursor-pointer">
+                <div className="flex flex-col md:flex-row md:items-center gap-6">
                   {/* Number & Icon */}
-                  <div className="flex items-center gap-4 md:flex-col md:items-center md:w-20 flex-shrink-0">
-                    <span className="font-title text-3xl md:text-4xl text-crimson">
-                      #{String(index + 1).padStart(2, "0")}
+                  <div className="flex items-center gap-4 md:w-24 flex-shrink-0">
+                    <span className="font-title text-2xl md:text-3xl text-cyan">
+                      {String(index + 1).padStart(2, "0")}
                     </span>
-                    <div className="p-3 transition-all duration-300 group-hover:scale-110 bg-blueviolet/10">
-                      <BookOpen className="w-6 h-6 text-blueviolet" />
-                    </div>
                   </div>
 
                   {/* Content */}
                   <div className="flex-1">
-                    {/* Title */}
-                    <h3 className="font-title text-xl md:text-2xl uppercase leading-tight mb-3 text-black group-hover:text-blueviolet transition-colors">
+                    <h3 className="font-title text-lg md:text-xl uppercase leading-tight mb-2 text-black group-hover:text-cyan transition-colors">
                       {workshop.title}
                     </h3>
-
-                    {/* Description */}
-                    <p className="font-body text-base mb-4 leading-relaxed text-black/60">
+                    <p className="font-body text-sm text-gray-500 line-clamp-2">
                       {workshop.description}
                     </p>
+                  </div>
 
-                    {/* Meta Row */}
-                    <div className="flex flex-wrap items-center gap-6 pt-4 border-t-2 border-dashed border-platinum">
-                      {/* PIC */}
-                      <div className="flex items-center gap-2">
-                        <User className="w-4 h-4 text-blueviolet" />
-                        <span className="font-title text-xs tracking-wide uppercase text-black/50">
-                          PIC: {workshop.pic}
-                        </span>
+                  {/* Meta & Arrow */}
+                  <div className="flex items-center gap-4 md:flex-shrink-0">
+                    {workshop.videoUrl && (
+                      <div className="flex items-center gap-2 text-gray-400">
+                        <Play className="w-4 h-4" />
+                        <span className="font-body text-xs uppercase tracking-wide">Video</span>
                       </div>
-
-                      {/* Deliverables */}
-                      <div className="flex items-center gap-2 flex-1">
-                        <CheckCircle className="w-4 h-4 flex-shrink-0 text-crimson" />
-                        <span className="font-body text-sm line-clamp-1 text-black/60">
-                          {workshop.deliverables}
-                        </span>
-                      </div>
-
-                      {/* Arrow */}
-                      <div className="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity ml-auto text-blueviolet">
-                        <span className="font-title text-xs uppercase tracking-wider hidden sm:inline">
-                          View
-                        </span>
-                        <ArrowRight className="w-5 h-5" />
-                      </div>
+                    )}
+                    <div className="flex items-center gap-2 text-gray-400">
+                      <BookOpen className="w-4 h-4" />
+                      <span className="font-body text-xs uppercase tracking-wide">Slides</span>
+                    </div>
+                    <div className="w-10 h-10 flex items-center justify-center bg-gray-100 group-hover:bg-cyan transition-colors">
+                      <ArrowRight className="w-5 h-5 text-gray-500 group-hover:text-black transition-colors" />
                     </div>
                   </div>
                 </div>

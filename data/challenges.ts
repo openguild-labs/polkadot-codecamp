@@ -47,7 +47,7 @@ export const challenges: Challenge[] = [
   },
   {
     id: "4",
-    title: "Building a Uniswap V2 DEX on Polkadot Hub",
+    title: "Building a Uniswap V2 DEX on Polkadot",
     description:
       "Give reference to the existing Uniswap V2 contracts and guide users to build a Uniswap V2 DEX with UI + contracts. Create a fully functional decentralized exchange.",
     pic: "Dustin Dung",

@@ -18,9 +18,9 @@ We're covering everything you need to start building today. This workshop assume
 
 ## Understanding Dual VM Architecture (0:45 - 2:00) [190 words]
 
-First, let's understand what makes Polkadot Hub unique: the dual VM architecture with REVM and PolkaVM.
+First, let's understand what makes Polkadot Solidity unique: the dual VM architecture with REVM and PolkaVM.
 
-A virtual machine executes smart contract code in an isolated environment with deterministic execution. Traditional blockchains use a single VM. Polkadot Hub supports two VMs through pallet-revive, a unified smart contract framework.
+A virtual machine executes smart contract code in an isolated environment with deterministic execution. Traditional blockchains use a single VM. Polkadot Solidity supports two VMs through pallet-revive, a unified smart contract framework.
 
 The dual VM strategy: REVM is the primary production VM - it's a one hundred percent EVM-compatible Rust implementation that powers Foundry and Reth. It's battle-tested and launching December twenty twenty-five. Deploy any Solidity contract unchanged. All Ethereum tooling works: Hardhat, Foundry, Remix, MetaMask, Web3.js, and Ethers.
 
@@ -28,7 +28,7 @@ PolkaVM is the future preview VM - register-based RISC-V architecture with multi
 
 Both VMs share infrastructure through pallet-revive: storage, gas metering, precompiles, and events.
 
-Polkadot Hub runs on Asset Hub, Polkadot's system parachain. This gives you zero deployment costs, Asset Hub security through Polkadot, native XCM access for cross-chain operations, and access to Asset Hub's native runtime functions from your smart contracts.
+Polkadot Solidity runs on Asset Hub, Polkadot's system parachain. This gives you zero deployment costs, Asset Hub security through Polkadot, native XCM access for cross-chain operations, and access to Asset Hub's native runtime functions from your smart contracts.
 
 For testing today, we'll use Westend Hub testnet with free faucet tokens.
 
@@ -108,7 +108,7 @@ Install with one command: curl the Foundry installer and pipe to bash. Restart y
 
 Create your first project with forge init. This generates a complete project structure with src for contracts, test for tests, script for deployment, lib for dependencies, and foundry.toml for configuration.
 
-Configure Foundry by editing the toml file. Set Solidity version to zero point eight point twenty. Add RPC endpoints for Polkadot Hub testnet at westend-hub dot polkadot dot io. Mainnet will be available December twenty twenty-five. Add Ethereum endpoints for reference.
+Configure Foundry by editing the toml file. Set Solidity version to zero point eight point twenty. Add RPC endpoints for Polkadot Solidity testnet at westend-hub dot polkadot dot io. Mainnet will be available December twenty twenty-five. Add Ethereum endpoints for reference.
 
 Create a simple Counter contract in src. Write comprehensive tests in the test folder. Run tests with forge test. Use gas-report flag for optimization insights. Use match-test to run specific tests. Use four v flags for maximum verbosity when debugging.
 
@@ -120,7 +120,7 @@ Hardhat is the JavaScript alternative to Foundry. It offers TypeScript support, 
 
 Create a project directory, initialize npm with npm init, install Hardhat as a dev dependency, run npx hardhat init, select TypeScript project, and install dependencies when prompted.
 
-Configure Hardhat by editing hardhat.config.ts. Import the hardhat toolbox. Set Solidity to zero point eight point twenty. Configure networks: local hardhat network with chain ID thirteen thirty-seven, Polkadot Hub testnet pointing to Westend Hub, and Polkadot Hub mainnet coming December twenty twenty-five.
+Configure Hardhat by editing hardhat.config.ts. Import the hardhat toolbox. Set Solidity to zero point eight point twenty. Configure networks: local hardhat network with chain ID thirteen thirty-seven, Polkadot Solidity testnet pointing to Westend Hub, and Polkadot Solidity mainnet coming December twenty twenty-five.
 
 For environment variables, create a dot env file with your private key and API keys. Never commit this file - add it to gitignore. Create a dot env dot example as a template for your team. Install dotenv package and import in your config.
 

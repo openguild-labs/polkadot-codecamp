@@ -13,14 +13,6 @@
 
 @font-face {
   font-family: "Space Grotesk";
-  src: url("/fonts/SPACEGROTESK-LIGHT.TTF") format("truetype");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Space Grotesk";
   src: url("/fonts/SPACEGROTESK-REGULAR.TTF") format("truetype");
   font-weight: 400;
   font-style: normal;
@@ -52,6 +44,14 @@
 }
 
 @font-face {
+  font-family: "Space Grotesk";
+  src: url("/fonts/SPACEGROTESK-LIGHT.TTF") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
   font-family: "Minecraftia";
   src: url("/fonts/MINECRAFTIA-REGULAR.TTF") format("truetype");
   font-weight: normal;
@@ -61,13 +61,28 @@
 
 @layer base {
   :root {
-    /* Brand Colors */
+    /* New Color Palette - Primary Blue */
+    --cyan: #00bcd4;
+    --cyan-light: #4dd0e1;
+    --cyan-dark: #0097a7;
+    --black: #000000;
+    --white: #ffffff;
+    --gray-50: #fafafa;
+    --gray-100: #f5f5f5;
+    --gray-200: #e5e5e5;
+    --gray-300: #d4d4d4;
+    --gray-400: #a3a3a3;
+    --gray-500: #737373;
+    --gray-600: #525252;
+    --gray-700: #404040;
+    --gray-800: #262626;
+    --gray-900: #171717;
+
+    /* Legacy Colors for compatibility */
     --crimson: #ff195f;
     --blueviolet: #5816cf;
     --water: #edf4fe;
     --platinum: #e2e2e2;
-    --black: #000000;
-    --white: #ffffff;
 
     --background: 0 0% 100%;
     --foreground: 0 0% 3.9%;
@@ -76,10 +91,14 @@
   body {
     @apply bg-white text-black;
     font-family: "Space Grotesk", system-ui, sans-serif;
+    background-image: url("/noise-background.png");
+    background-repeat: repeat;
+    background-size: auto;
+    background-attachment: fixed;
   }
 
   * {
-    border-color: #e2e2e2;
+    border-color: var(--gray-200);
   }
 }
 
@@ -88,71 +107,62 @@
   .font-title {
     font-family: "VCR OSD Mono", monospace;
     text-transform: uppercase;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.05em;
   }
 
-  /* Space Grotesk body text - for regular content */
+  /* Space Grotesk - for body/content text */
   .font-body {
     font-family: "Space Grotesk", system-ui, sans-serif;
   }
 
-  /* Minecraftia pixel decorative text */
-  .font-pixel {
-    font-family: "Minecraftia", monospace;
-    text-transform: uppercase;
-  }
-
-  /* Card with pixel border */
-  .card-pixel {
-    @apply bg-white border-2 border-black p-6;
-    box-shadow: 4px 4px 0 var(--black);
-    transition: all 0.2s ease;
-  }
-
-  .card-pixel:hover {
-    box-shadow: 6px 6px 0 var(--black);
-    transform: translate(-2px, -2px);
-  }
-
   /* Section heading style */
   .section-heading {
-    font-family: "VCR OSD Mono", monospace;
-    @apply text-4xl md:text-5xl lg:text-6xl uppercase;
-    color: var(--blueviolet);
-  }
-
-  .section-subheading {
-    font-family: "VCR OSD Mono", monospace;
-    @apply uppercase text-sm md:text-base tracking-widest mb-2;
-    color: var(--crimson);
+    @apply font-title text-4xl md:text-5xl lg:text-6xl uppercase leading-none;
+    color: var(--black);
   }
 
   /* Accent bar */
   .accent-bar {
-    @apply h-2;
-    background-color: var(--blueviolet);
-    width: 120px;
+    height: 4px;
+    background-color: var(--cyan);
   }
 
-  .accent-bar-crimson {
-    @apply h-2;
-    background-color: var(--crimson);
-    width: 120px;
+  /* Card styles */
+  .card {
+    @apply bg-white border border-gray-200 transition-all duration-200;
+  }
+
+  .card:hover {
+    @apply border-gray-300 shadow-lg;
+  }
+
+  /* Badge styles */
+  .badge {
+    @apply inline-flex items-center px-3 py-1.5 text-xs font-medium uppercase tracking-wider;
+    font-family: "VCR OSD Mono", monospace;
+  }
+
+  .badge-primary {
+    @apply badge;
+    background-color: var(--black);
+    color: var(--white);
+  }
+
+  .badge-secondary {
+    @apply badge;
+    background-color: var(--cyan);
+    color: var(--black);
   }
 }
 
 @layer utilities {
-  /* Text gradient */
+  /* Text gradient with cyan */
   .text-gradient {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(
-      135deg,
-      var(--crimson),
-      var(--blueviolet)
-    );
+    background-image: linear-gradient(135deg, var(--cyan), var(--cyan-dark));
   }
 
-  /* Staggered animation delays */
+  /* Stagger animation utilities */
   .stagger-1 {
     animation-delay: 0.1s;
   }
@@ -177,20 +187,20 @@ html {
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #edf4fe;
+  background: var(--gray-100);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #ff195f;
-  border-radius: 0;
+  background: var(--gray-300);
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #5816cf;
+  background: var(--gray-400);
 }
 
 /* Keyframe animations */
@@ -214,7 +224,53 @@ html {
   }
 }
 
-/* Blink animation utility */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation utilities */
 .animate-blink {
   animation: blink 1s step-end infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.6s ease-out forwards;
+}
+
+/* Selection styles */
+::selection {
+  background-color: var(--cyan);
+  color: var(--black);
+}
+
+/* Focus styles */
+:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 2px;
 }

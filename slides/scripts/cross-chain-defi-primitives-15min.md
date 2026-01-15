@@ -22,7 +22,7 @@ Let's start with why cross-chain matters.
 
 The problem today: blockchain A has five hundred million dollars locked, blockchain B has a DeFi opportunity, but the user wants both. They can't access funds across chains. Liquidity is siloed. Bridge risks are substantial with hacks and failures common.
 
-The Polkadot Hub solution: smart contracts on Asset Hub with native XCM access can communicate with any parachain. Assets flow seamlessly. DeFi protocols compose across chains. Everything is trustless and native.
+The Polkadot Solidity solution: smart contracts on Asset Hub with native XCM access can communicate with any parachain. Assets flow seamlessly. DeFi protocols compose across chains. Everything is trustless and native.
 
 Benefits for users: access liquidity everywhere, get best rates across chains, enjoy unified user experience, and eliminate bridge risk completely. For developers: tap into entire ecosystem, compose with any protocol, multiply network effects, and inherit shared security. For the ecosystem: capital efficiency improves dramatically, innovation accelerates, competitive advantage increases, and growth becomes sustainable.
 
@@ -40,7 +40,7 @@ XCM is version-controlled, currently at version three. It's agnostic to the tran
 
 Compare XCM to traditional bridges. Traditional bridges use bridge contracts that are centralized, require trust, present security risks, create wrapped tokens on the target chain, and fragment liquidity. The bridge is a single point of failure.
 
-XCM on Polkadot Hub is completely different. Your smart contract calls native XCM through precompiles. The relay chain validates and routes messages. External systems receive native assets - no wrapping required. Everything is trustless through shared security. Liquidity remains unified across the ecosystem.
+XCM on Polkadot Solidity is completely different. Your smart contract calls native XCM through precompiles. The relay chain validates and routes messages. External systems receive native assets - no wrapping required. Everything is trustless through shared security. Liquidity remains unified across the ecosystem.
 
 The key difference: XCM is native to Polkadot. There's no intermediary. No trusted third party. No separate token for the bridge. Messages are part of the protocol itself, secured by the same validators that secure the entire network. This is true interoperability.
 
