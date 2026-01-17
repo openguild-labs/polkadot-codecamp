@@ -10,7 +10,7 @@
 
 Hello and welcome to Cross-chain DeFi Primitives. I'm Tin, and today we will explore real-world cross-chain DeFi applications.
 
-This workshop focuses on understanding and implementing cross-chain functionality. By the end, you'll understand XCM Cross-Consensus Messaging, learn Hyperbridge SDK integration, know how to build cross-chain DeFi applications, implement cross-chain asset transfers, explore real-world DeFi use cases, and deploy a working cross-chain dApp.
+This workshop focuses on understanding and implementing cross-chain functionality. By the end, you'll understand XCM Cross-Consensus Messaging, learn how Hyperbridge works as a crypto-economic coprocessor, integrate the ISMP-based Hyperbridge SDK, build cross-chain DeFi applications, implement cross-chain asset transfers and storage queries, and deploy a working cross-chain dApp.
 
 This is where Polkadot truly shines - native cross-chain communication without bridges, wrapped tokens, or trust assumptions. Let's explore how to build applications that leverage the entire Polkadot ecosystem.
 
@@ -80,17 +80,17 @@ The key: XCM is accessible from both EVM smart contracts and native Substrate ca
 
 ## Hyperbridge Introduction (6:30 - 7:45) [190 words]
 
-Hyperbridge is a cross-chain messaging protocol that extends beyond Polkadot.
+Hyperbridge is a crypto-economic coprocessor for secure cross-chain interoperability.
 
-Key features: trustless message passing using cryptographic proofs, lower latency than some XCM routes, external chain connectivity to Ethereum and Cosmos, and support for any chain with light client verification.
+The problem: traditional bridges use multi-sig committees that have led to over two billion dollars in losses. The solution: Hyperbridge performs verification operations offchain and reports results onchain with cryptographic proofs of correct execution.
 
-The architecture: Hyperbridge Network provides consensus and verification. It connects to Polkadot trustlessly, connects to Ethereum trustlessly, and also connects Cosmos and more chains.
+Three core innovations. First, the coprocessor model - expensive cryptographic verification is performed offchain, results are reported with proofs. Second, proof aggregation - Hyperbridge verifies and aggregates finalized states of all chains into a single proof. Third, permissionless relayers - powered by cryptographic proofs, no whitelisting or staking required. Anyone can relay messages.
 
-Compare XCM versus Hyperbridge. XCM is native to Polkadot with deep integration but limited to the Polkadot ecosystem. Hyperbridge offers multi-ecosystem support, connects to Ethereum and Cosmos, uses cryptographic proofs, has lower fees for some operations, but adds external dependency.
+Compare XCM versus Hyperbridge. XCM is native to Polkadot with deep integration but limited to the ecosystem. Hyperbridge via its ISMP protocol offers chain-agnostic interoperability, connects to Ethereum and beyond, supports both POST requests for messages and GET requests for cross-chain storage queries.
 
-Best practice: use both. Use XCM for parachain-to-parachain communication - it's native, fast, and deeply integrated. Use Hyperbridge for external chains when you need to connect to Ethereum, Cosmos, or other non-Polkadot ecosystems.
+Best practice: use both. Use XCM for parachain-to-parachain communication - it's native and deeply integrated. Use Hyperbridge for external chains and when you need cross-chain storage queries.
 
-Install the Hyperbridge SDK with npm or yarn. Initialize with source chain, destination chain, and RPC URL. Create an EVM client with provider and chain ID. Send messages by defining the message, sending via Hyperbridge with options, and waiting for confirmation.
+The Solidity SDK uses ISMP interfaces. HyperApp base contract provides onAccept for POST requests and onGetResponse for GET requests. TypeScript SDK tracks request status through the indexer.
 
 ---
 
@@ -174,7 +174,7 @@ Common XCM issues: insufficient fees on destination, wrong asset ID format, inco
 
 ## Resources and Next Steps (14:00 - 14:45) [110 words]
 
-Essential documentation: XCM Format on GitHub, XCM Docs on Polkadot Wiki, Hyperbridge documentation and SDK reference, and Bifrost docs with integration guide.
+Essential documentation: XCM Format on GitHub, XCM Docs on Polkadot Wiki, Hyperbridge docs at docs.hyperbridge.network with Solidity SDK, Polkadot SDK, and TypeScript SDK sections, and Bifrost docs with integration guide.
 
 Development tools: Chopsticks for testing, XCM Tools from Parity, Moonbeam XCM precompiles documentation. Monitoring: Subscan XCM tracking, Polkaholic for analytics, DotMarketCap for ecosystem data.
 
@@ -188,7 +188,7 @@ Practice with the provided code examples and deploy to testnet.
 
 ## Summary and Closing (14:45 - 15:00) [75 words]
 
-Key takeaways: XCM enables trustless cross-chain communication natively. Hyperbridge extends reach to external ecosystems like Ethereum. Cross-chain DeFi unlocks possibilities impossible on isolated chains. Bifrost demonstrates real-world liquid staking usage. Security and proper error handling are critical for production.
+Key takeaways: XCM enables trustless cross-chain communication natively within Polkadot. Hyperbridge is a crypto-economic coprocessor for external chain connectivity with cryptographic proof verification. The ISMP protocol supports both POST requests for messages and GET requests for cross-chain storage queries. Permissionless relayers powered by cryptographic proofs. Cross-chain DeFi unlocks possibilities impossible on isolated chains. Bifrost demonstrates real-world liquid staking. Security and proper error handling are critical.
 
 Next workshop: Walk through Polkadot Grant Ecosystem covering how to apply for grants, writing winning proposals, grant requirements, and success strategies.
 

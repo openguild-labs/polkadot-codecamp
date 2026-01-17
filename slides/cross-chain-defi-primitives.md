@@ -25,10 +25,10 @@ duration: 90 minutes
 By the end of this workshop, you will:
 
 - Understand XCM (Cross-Consensus Messaging)
-- Learn Hyperbridge SDK integration
+- Learn Hyperbridge as a crypto-economic coprocessor
+- Integrate the Hyperbridge ISMP SDK
 - Build cross-chain DeFi applications
-- Implement cross-chain asset transfers
-- Explore real-world DeFi use cases
+- Implement cross-chain asset transfers and storage queries
 - Deploy a working cross-chain dApp
 
 ---
@@ -436,155 +436,197 @@ async function sendXCM() {
 
 ---
 
-## Hyperbridge: Enhanced Cross-chain Communication
+## Hyperbridge: Crypto-Economic Coprocessor for Cross-chain Interoperability
 
 ### What is Hyperbridge?
 
-**Hyperbridge is a cross-chain messaging protocol:**
+**Hyperbridge is a crypto-economic coprocessor for secure interoperability:**
 
-**Features:**
+Secure interoperability requires verification of consensus proofs, state proofs, and state transition validity proofs. Traditional bridges use multi-sig committees, which have led to **$2 billion+ in losses**. Hyperbridge solves this with a coprocessor model.
 
-- Trustless message passing
-- Cryptographic proofs
-- Lower latency than XCM
-- External chain connectivity
-- Ethereum, Cosmos, etc.
+**Core Innovation:**
+
+- **Coprocessor Model**: Verification operations performed offchain, results reported onchain with cryptographic proofs
+- **Proof Aggregation**: Verifies and aggregates finalized states of all chains into a single proof
+- **Permissionless Relayers**: Powered by cryptographic proofs, no whitelisting or staking required
+- **Chain-Agnostic**: Connect Polkadot, Ethereum, and any supported chain
 
 **Architecture:**
 
 ```mermaid
 graph TB
-    HB[Hyperbridge Network<br/>Consensus + Verification]
+    HB[Hyperbridge Nexus<br/>Crypto-Economic Coprocessor]
 
-    HB -->|Trustless Bridge| POL[Polkadot]
-    HB -->|Trustless Bridge| ETH[Ethereum]
-    HB -.->|Also Connects| COS[Cosmos]
-    HB -.->|Also Connects| MORE[More Chains...]
+    HB -->|Proof Aggregation| POL[Polkadot<br/>Parachains]
+    HB -->|Proof Aggregation| ETH[Ethereum<br/>L1/L2s]
+    HB -.->|Extensible| MORE[More Chains...]
+
+    subgraph "ISMP Protocol"
+        POST[POST Requests<br/>Send Messages]
+        GET[GET Requests<br/>Read State]
+    end
+
+    POL <--> POST
+    ETH <--> GET
 
     style HB fill:#00BCD4,stroke:#fff,color:#fff
     style POL fill:#1a1a1a,stroke:#fff,color:#fff
     style ETH fill:#1a1a1a,stroke:#fff,color:#fff
-    style COS fill:#1a1a1a,stroke:#00BCD4
     style MORE fill:#1a1a1a,stroke:#00BCD4
+    style POST fill:#1a1a1a,stroke:#00BCD4
+    style GET fill:#1a1a1a,stroke:#00BCD4
 ```
 
 ### Hyperbridge vs XCM
 
 **XCM:**
 ✅ Native to Polkadot
-✅ Deep integration
-✅ Parachains only
+✅ Deep integration with parachains
+✅ System-level messaging
 ❌ Limited to Polkadot ecosystem
 
-**Hyperbridge:**
-✅ Multi-ecosystem support
+**Hyperbridge (ISMP):**
+✅ Chain-agnostic interoperability
 ✅ Connect to Ethereum, Cosmos, etc.
-✅ Cryptographic proofs
-✅ Lower fees for some operations
-❌ External dependency
+✅ Cryptographic proof verification
+✅ Permissionless relayer network
+✅ Cross-chain storage queries
+❌ Requires relayer infrastructure
 
 **Best Practice:** Use both!
 
-- XCM for parachain-to-parachain
-- Hyperbridge for external chains
+- XCM for parachain-to-parachain communication
+- Hyperbridge for external chain connectivity
 
 ---
 
 ## Hyperbridge SDK Integration
 
-### Installation
+### Architecture Overview
+
+Hyperbridge provides three SDK options:
+
+1. **Solidity SDK** - For EVM smart contracts (POST/GET requests)
+2. **Polkadot SDK** - For Substrate-based chains (ISMP module)
+3. **Hyperbridge SDK** - TypeScript SDK for tracking requests
+
+### Solidity SDK Installation
 
 ```bash
-npm install @hyperbridge/sdk
-# or
-yarn add @hyperbridge/sdk
+# Install via Foundry
+forge install polytope-labs/hyperbridge
+
+# Add remapping to foundry.toml
+# @hyperbridge/=lib/hyperbridge/evm/
 ```
 
-### Basic Setup
-
-```typescript
-import { Hyperbridge, EvmClient } from "@hyperbridge/sdk";
-
-// Initialize Hyperbridge
-const hyperbridge = new Hyperbridge({
-  sourceChain: "moonbeam",
-  destinationChain: "ethereum",
-  rpcUrl: "https://rpc.api.moonbeam.network",
-});
-
-// Create EVM client
-const client = new EvmClient({
-  provider: window.ethereum,
-  chainId: 1284,
-});
-```
-
-### Sending Cross-chain Messages
-
-```typescript
-// Define message
-const message = {
-  to: "0xRecipientAddress",
-  data: "0xContractCallData",
-  value: 0,
-  gasLimit: 300000,
-};
-
-// Send via Hyperbridge
-const tx = await hyperbridge.sendMessage({
-  destination: "ethereum",
-  message,
-  options: {
-    gasPrice: await client.getGasPrice(),
-    confirmations: 6,
-  },
-});
-
-// Wait for confirmation
-const receipt = await tx.wait();
-console.log("Message sent:", receipt.messageId);
-```
-
-### Receiving Messages
+### Sending POST Requests (EVM)
 
 ```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "@hyperbridge/contracts/IMessageReceiver.sol";
+import "@hyperbridge/core/IDispatcher.sol";
+import "@hyperbridge/core/StateMachine.sol";
+import "@hyperbridge/core/HyperApp.sol";
 
-contract MyDApp is IMessageReceiver {
-    // Hyperbridge handler
-    address public immutable hyperbridgeHandler;
+contract CrossChainApp is HyperApp {
+    constructor(address host) HyperApp(host) {}
 
-    constructor(address _handler) {
-        hyperbridgeHandler = _handler;
-    }
+    // Send a cross-chain message
+    function sendCrossChainMessage(
+        bytes memory destChain,
+        bytes memory data,
+        uint64 timeout,
+        uint256 fee
+    ) external payable {
+        // Create POST request
+        DispatchPost memory post = DispatchPost({
+            dest: destChain,                    // e.g., StateMachine.ethereum()
+            to: abi.encodePacked(targetContract),
+            body: data,
+            timeout: timeout,
+            fee: fee,
+            payer: msg.sender
+        });
 
-    // Called by Hyperbridge when message arrives
-    function onMessageReceived(
-        uint256 sourceChain,
-        bytes calldata sender,
-        bytes calldata data
-    ) external override {
-        require(msg.sender == hyperbridgeHandler, "Unauthorized");
-
-        // Process cross-chain message
-        _processMessage(sourceChain, sender, data);
-    }
-
-    function _processMessage(
-        uint256 sourceChain,
-        bytes memory sender,
-        bytes memory data
-    ) internal {
-        // Your logic here
-        (address token, uint256 amount) = abi.decode(data, (address, uint256));
-
-        // Handle received data
-        // e.g., mint tokens, update state, etc.
+        // Dispatch via Hyperbridge
+        IDispatcher(host).dispatch{value: msg.value}(post);
     }
 }
+```
+
+### Receiving Messages (EVM)
+
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+import "@hyperbridge/core/IApp.sol";
+import "@hyperbridge/core/HyperApp.sol";
+
+contract MyDApp is HyperApp {
+    constructor(address host) HyperApp(host) {}
+
+    // Called when a POST request is received
+    function onAccept(IncomingPostRequest calldata request)
+        external
+        override
+        onlyHost
+    {
+        // Decode the message
+        (address token, uint256 amount) = abi.decode(
+            request.post.body,
+            (address, uint256)
+        );
+
+        // Process the cross-chain message
+        _handleMessage(request.post.source, token, amount);
+    }
+
+    // Called when a GET response is received
+    function onGetResponse(IncomingGetResponse calldata response)
+        external
+        override
+        onlyHost
+    {
+        // Process cross-chain storage query response
+        _handleStorageResponse(response);
+    }
+
+    function _handleMessage(
+        bytes memory source,
+        address token,
+        uint256 amount
+    ) internal {
+        // Your business logic here
+    }
+}
+```
+
+### Tracking Requests (TypeScript SDK)
+
+```typescript
+import { IndexerClient, EvmChain } from "@hyperbridge/sdk";
+
+// Initialize the indexer client
+const indexer = new IndexerClient({
+  url: "https://indexer.hyperbridge.network",
+});
+
+// Track a POST request status
+async function trackRequest(commitment: string) {
+  const status = await indexer.postRequestStatus(commitment);
+
+  console.log("Request status:", status);
+  // Statuses: SOURCE_FINALIZED, HYPERBRIDGE_DELIVERED, DEST_FINALIZED
+}
+
+// Initialize chain connection
+const evmChain = new EvmChain({
+  host: "0x...", // IHost contract address
+  rpcUrl: "https://rpc.api.moonbeam.network",
+});
 ```
 
 ---
@@ -1459,9 +1501,13 @@ contract PortfolioTracker {
 
 **Hyperbridge:**
 
-- Hyperbridge Docs: https://docs.hyperbridge.network
-- SDK Reference: https://github.com/polytope-labs/hyperbridge
-- Examples: https://github.com/polytope-labs/hyperbridge/tree/main/examples
+- Hyperbridge Documentation: https://docs.hyperbridge.network
+- Developer Guide: https://docs.hyperbridge.network/developers
+- Solidity SDK: https://docs.hyperbridge.network/developers/evm/overview
+- Polkadot SDK: https://docs.hyperbridge.network/developers/polkadot/getting-started
+- TypeScript SDK: https://docs.hyperbridge.network/developers/sdk/overview
+- GitHub Repository: https://github.com/polytope-labs/hyperbridge
+- Protocol Specification: https://docs.hyperbridge.network/protocol
 
 **Bifrost:**
 
@@ -1503,7 +1549,7 @@ A: Typically 1-2 blocks on destination (12-24 seconds), but can vary.
 A: Depends on implementation. Best practice: implement timeouts and refunds.
 
 **Q: Can I use XCM from Ethereum?**
-A: Not directly. Use Hyperbridge to connect Ethereum to Polkadot.
+A: Not directly. Use Hyperbridge (ISMP protocol) to connect Ethereum to Polkadot with cryptographic proof verification.
 
 **Q: Are XCM messages expensive?**
 A: Relatively cheap (usually < $0.01), much less than traditional bridges.
@@ -1526,10 +1572,12 @@ A: Check block explorers, use chopsticks for local testing, monitor events.
 
 ### Key Takeaways
 
-✅ **XCM enables trustless cross-chain communication**
-✅ **Hyperbridge extends to external ecosystems**
+✅ **XCM enables trustless cross-chain communication within Polkadot**
+✅ **Hyperbridge is a crypto-economic coprocessor for external chain connectivity**
+✅ **ISMP protocol enables POST requests (messages) and GET requests (storage queries)**
+✅ **Permissionless relayers powered by cryptographic proofs**
 ✅ **Cross-chain DeFi unlocks new possibilities**
-✅ **Bifrost example shows real-world usage**
+✅ **Bifrost example shows real-world liquid staking usage**
 ✅ **Security and proper error handling are critical**
 
 ### Next Workshop
