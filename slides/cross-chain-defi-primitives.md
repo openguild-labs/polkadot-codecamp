@@ -548,7 +548,7 @@ contract CrossChainApp is HyperApp {
             timeout: timeout,
             fee: fee,
             payer: msg.sender
-        });
+});
 
         // Dispatch via Hyperbridge
         IDispatcher(host).dispatch{value: msg.value}(post);

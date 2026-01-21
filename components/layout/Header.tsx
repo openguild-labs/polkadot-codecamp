@@ -22,6 +22,7 @@ export const Header: React.FC = () => {
     { label: "Home", href: "/" },
     { label: "Workshops", href: "#workshops" },
     { label: "Challenges", href: "#challenges" },
+    { label: "Calendar", href: "https://luma.com/openguildcalendar", external: true },
     { label: "FAQ", href: "#faq" },
   ];
 
@@ -53,6 +54,7 @@ export const Header: React.FC = () => {
               <a
                 key={item.label}
                 href={item.href}
+                {...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                 className="font-title text-sm text-black tracking-wider hover:text-cyan transition-colors duration-200 relative group"
               >
                 {item.label.toUpperCase()}
@@ -83,6 +85,7 @@ export const Header: React.FC = () => {
                 <motion.a
                   key={item.label}
                   href={item.href}
+                  {...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.05 }}

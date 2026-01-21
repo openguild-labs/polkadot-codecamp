@@ -130,6 +130,16 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <a
+                  href="https://luma.com/openguildcalendar"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-colors duration-200 text-sm text-gray-400 hover:text-cyan"
+                >
+                  Calendar
+                </a>
+              </li>
+              <li>
+                <a
                   href="#faq"
                   className="transition-colors duration-200 text-sm text-gray-400 hover:text-cyan"
                 >

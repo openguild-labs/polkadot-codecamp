@@ -99,7 +99,7 @@ export const Challenges: React.FC = () => {
                   {/* Deliverables */}
                   <p className="font-body text-sm text-gray-500 mb-4">
                     <span className="font-medium text-black">Deliverables:</span>{" "}
-                    {challenge.deliverables}
+                      {challenge.deliverables}
                   </p>
 
                   {/* GitHub Button */}

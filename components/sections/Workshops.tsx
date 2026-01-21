@@ -65,7 +65,7 @@ export const Workshops: React.FC = () => {
                     <p className="font-body text-sm text-gray-500 line-clamp-2">
                       {workshop.description}
                     </p>
-                  </div>
+                      </div>
 
                   {/* Meta & Arrow */}
                   <div className="flex items-center gap-4 md:flex-shrink-0">
@@ -78,7 +78,7 @@ export const Workshops: React.FC = () => {
                     <div className="flex items-center gap-2 text-gray-400">
                       <BookOpen className="w-4 h-4" />
                       <span className="font-body text-xs uppercase tracking-wide">Slides</span>
-                    </div>
+                      </div>
                     <div className="w-10 h-10 flex items-center justify-center bg-gray-100 group-hover:bg-cyan transition-colors">
                       <ArrowRight className="w-5 h-5 text-gray-500 group-hover:text-black transition-colors" />
                     </div>
