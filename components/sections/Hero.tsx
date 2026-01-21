@@ -73,35 +73,12 @@ export const Hero: React.FC = () => {
             <span className="inline-block w-2 h-5 bg-cyan animate-blink" />
           </motion.div>
 
-          {/* Dates */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-            className="mb-6"
-          >
-            <span className="font-body text-xl md:text-2xl text-black font-medium">
-              Feb 15, 2026 - Mar 24, 2026
-            </span>
-          </motion.div>
-
-          {/* Description */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.6 }}
-            className="font-body text-base md:text-lg mb-10 max-w-lg leading-relaxed text-gray-600"
-          >
-            A 4-week online hackathon designed to discover and accelerate the
-            most promising Web3 builders on Polkadot
-          </motion.p>
-
           {/* CTAs */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.7 }}
-            className="flex flex-col sm:flex-row gap-4 mb-12"
+            transition={{ duration: 0.5, delay: 0.5 }}
+            className="flex flex-col sm:flex-row gap-4 mt-8 mb-12"
           >
             <Button variant="primary" size="lg" href="#workshops">
               Start Learning
@@ -117,7 +94,7 @@ export const Hero: React.FC = () => {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.8 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
             className="flex flex-wrap items-center gap-4 md:gap-6"
           >
             <span className="font-body text-sm text-gray-500">
